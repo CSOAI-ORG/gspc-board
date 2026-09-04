@@ -76,6 +76,8 @@ says (issuer accounts, instruments, disclosures). **Never pool them.**
 - npm: [`csoai-gspc-mcp`](https://www.npmjs.com/package/csoai-gspc-mcp)
 - Kaggle twin: <https://www.kaggle.com/datasets/nicktempleman/csoai-gspc-living-board>
 - Methodology DOI: <https://doi.org/10.5281/zenodo.21991104>
+- This snapshot, citable on Zenodo: <https://doi.org/10.5281/zenodo.22293341>
+- Python reader and card verifier: [`pip install "csoai-gspc[verify]"`](https://pypi.org/project/csoai-gspc/)
 
 ## What this is not
 
