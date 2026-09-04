@@ -71,9 +71,10 @@ says (issuer accounts, instruments, disclosures). **Never pool them.**
 ## Everything else
 
 - Every frozen bank as its own repository: <https://huggingface.co/csoai>
-- MCP endpoint (12 tools, verified 2026-09-04T04:44:51Z): `POST https://councilof.ai/mcp`
-- MCP Registry: `io.github.CSOAI-ORG/gspc`
-- npm: [`csoai-gspc-mcp`](https://www.npmjs.com/package/csoai-gspc-mcp)
+- MCP endpoint — 12 tools (7 free, 5 x402-metered): `POST https://councilof.ai/mcp`
+- MCP server, one command: `claude mcp add gspc -- npx -y csoai-gspc-mcp`
+- MCP Registry: `io.github.CSOAI-ORG/gspc` · npm: [`csoai-gspc-mcp`](https://www.npmjs.com/package/csoai-gspc-mcp)
+  (no version pinned here — `npm view csoai-gspc-mcp version` is the authority)
 - Kaggle twin: <https://www.kaggle.com/datasets/nicktempleman/csoai-gspc-living-board>
 - Methodology DOI: <https://doi.org/10.5281/zenodo.21991104>
 - This snapshot, citable on Zenodo: <https://doi.org/10.5281/zenodo.22293341>
