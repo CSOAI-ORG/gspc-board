@@ -1,0 +1,300 @@
+{
+ "kind": "csoai.gspc-spray-snapshot/1",
+ "as_of": "2026-09-05T09:00:28Z",
+ "read_at": "2026-09-05T12:42:38Z",
+ "lid": "22 axes measured · 14 model fleets · 3 public leader scores · 8 fact runs · TIE is TIE · not a certificate.",
+ "board_url": "https://councilof.ai/api/gspc",
+ "root_url": "https://councilof.ai/root.json",
+ "board_sha256": "7de63d582aaa7d7b5685904f30153bfd35fba0e1c1b5293d7583a696ab96c40a",
+ "board_content_sha256": "dada58b59e757f20cabfe87ef70bf6ea4c9a91833ab69550044d8488901a4ed3",
+ "root_sha256": "5850f73bac4a4fcb06d83095adf9c333a3c77d69362a8f203b2b859d98217c84",
+ "merkle_root": "bb078bf2f0d39801dc4a83c717f09692c9e66bddd092ad090c8d4835f03d4b66",
+ "card_count": 153,
+ "did_intended": "did:web:csoai.org#board-attestation-1",
+ "board_signer": "did:web:csoai.org#board-attestation-1",
+ "fingerprint": "ea677ca9b6fefcf4d56a29e4c994b5d30bff9ef875276c4c165b0d4a9323acb9",
+ "fingerprint_rule": "sha256(board_content_sha256 | merkle_root | card_count); board_content_sha256 = sha256 of canonical JSON (sorted keys, no whitespace, UTF-8 literal) of board.json minus site_attestation",
+ "counts": {
+  "slots": 22,
+  "by_status": {
+   "MEASURED": 22
+  },
+  "by_family": {
+   "gspc": 14,
+   "financial": 8
+  },
+  "by_kind": {
+   "model-comparison": 14,
+   "deterministic-facts": 8
+  },
+  "separation_over_model_comparison": {
+   "UNTESTED": 11,
+   "TIE": 2,
+   "SEPARATED": 1
+  },
+  "public_leader_state_over_model_comparison": {
+   "EXCLUDED_OWN_MODEL": 8,
+   "SHOWN": 3,
+   "NO_SIGNED_CARD": 3
+  },
+  "printed_totals": {
+   "axes": 22,
+   "measured_axes": 22,
+   "unmeasured_axes": 0,
+   "public_count": "22 axis · 22 measured",
+   "comparison_axes": 14,
+   "separated_leads": 1,
+   "ties": 2,
+   "untested_separations": 11,
+   "public_leader_count": 3,
+   "items": 969
+  },
+  "printed_agrees_with_array": true
+ },
+ "banks": [
+  {
+   "axis": "governance",
+   "dataset": "csoai/gspc-gov",
+   "expected_short": "gov",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-gov/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 237,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "safety",
+   "dataset": "csoai/gspc-agi",
+   "expected_short": "agi",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-agi/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 36,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "provenance",
+   "dataset": "csoai/gspc-prv",
+   "expected_short": "prv",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-prv/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 32,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "continuity",
+   "dataset": "csoai/gspc-asi",
+   "expected_short": "asi",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-asi/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 33,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "conformance",
+   "dataset": "csoai/gspc-mcp",
+   "expected_short": "mcp",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-mcp/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 35,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "openness",
+   "dataset": "csoai/gspc-oss",
+   "expected_short": "oss",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-oss/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 32,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "machinery-conformity",
+   "dataset": "csoai/gspc-mach",
+   "expected_short": "mach",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-mach/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 33,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "care",
+   "dataset": "csoai/gspc-care",
+   "expected_short": "care",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-care/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 200,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "cross-reality",
+   "dataset": "csoai/gspc-xr",
+   "expected_short": "xr",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-xr/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 32,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "detector-interop",
+   "dataset": "csoai/gspc-det",
+   "expected_short": "det",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-det/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 33,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "art5-safeguard",
+   "dataset": "csoai/gspc-art5",
+   "expected_short": "art5",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-art5/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 36,
+   "bank_canary_rows": 1,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "swarm",
+   "dataset": "csoai/gspc-swarm",
+   "expected_short": "swarm",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-swarm/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 41,
+   "bank_canary_rows": 0,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "affect",
+   "dataset": "csoai/gspc-affect",
+   "expected_short": "affect",
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-affect/resolve/main/items.jsonl",
+   "bank_state": "ITEMS_JSONL",
+   "bank_rows": 42,
+   "bank_canary_rows": 0,
+   "slug_matches_map": true
+  },
+  {
+   "axis": "jail",
+   "dataset": "csoai/gspc-jail-goldbank",
+   "expected_short": null,
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-jail-goldbank/resolve/main/items.jsonl",
+   "bank_state": "NO_ITEMS_JSONL",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "provenance-controls",
+   "dataset": "csoai/gspc-provenance-controls",
+   "expected_short": null,
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-provenance-controls/resolve/main/items.jsonl",
+   "bank_state": "NO_ITEMS_JSONL",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "reserve-attestation",
+   "dataset": "csoai/gspc-reserve-attestation",
+   "expected_short": null,
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-reserve-attestation/resolve/main/items.jsonl",
+   "bank_state": "NO_ITEMS_JSONL",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "regulatory-framework",
+   "dataset": "csoai/gspc-regulatory-framework",
+   "expected_short": null,
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-regulatory-framework/resolve/main/items.jsonl",
+   "bank_state": "NO_ITEMS_JSONL",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "distribution-integrity",
+   "dataset": "csoai/gspc-distribution-integrity",
+   "expected_short": null,
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-distribution-integrity/resolve/main/items.jsonl",
+   "bank_state": "NO_ITEMS_JSONL",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "custody-disclosure",
+   "dataset": "csoai/gspc-custody-disclosure",
+   "expected_short": null,
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-custody-disclosure/resolve/main/items.jsonl",
+   "bank_state": "NO_ITEMS_JSONL",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "ai-adoption-components",
+   "dataset": "csoai/gspc-ai-economy-index",
+   "expected_short": null,
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-ai-economy-index/resolve/main/items.jsonl",
+   "bank_state": "NO_ITEMS_JSONL",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "labour-components",
+   "dataset": "csoai/gspc-human-labour-index",
+   "expected_short": null,
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-human-labour-index/resolve/main/items.jsonl",
+   "bank_state": "NO_ITEMS_JSONL",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "humanoid-labour-index",
+   "dataset": "csoai/gspc-humanoid-labour-index",
+   "expected_short": null,
+   "items_url": "https://huggingface.co/datasets/csoai/gspc-humanoid-labour-index/resolve/main/items.jsonl",
+   "bank_state": "NO_ITEMS_JSONL",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  }
+ ],
+ "did_keys": [
+  {
+   "id": "did:web:csoai.org#site-release-1",
+   "x": "03g9l-dVNGVEAVVWQrJU9aLtkYTN3uARd52P7DEq-8g"
+  },
+  {
+   "id": "did:web:csoai.org#estate-chain-1",
+   "x": "M0cuAmhx2yDNvZnnbEdTLr_PhLN6vtWyYNrjWJ31aW0"
+  },
+  {
+   "id": "did:web:csoai.org#board-attestation-1",
+   "x": "k2fPWb6ctyu8l5at8FYgHsHFit_qoT-DssW3VNbCAXA"
+  },
+  {
+   "id": "did:web:csoai.org#card-attestation-1",
+   "x": "1MsOqhbV9Qv3Yzo2qjT-CaVeEkuTFt7Sq9sSK7nDfjg"
+  },
+  {
+   "id": "did:web:csoai.org#gspc-board-22axis-2026",
+   "x": "1XOnIZwNZFCR6fZAy1u_5xQp1DrBaFaGZaeiYNAeDSw"
+  }
+ ],
+ "generator": "scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)",
+ "note": "Snapshot of a live GET. The live GET is the authority. Measurement, not certification."
+}
