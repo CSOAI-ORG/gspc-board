@@ -1,8 +1,8 @@
-# GSPC board — snapshot as of 2026-09-05T12:39:29Z
+# GSPC board — snapshot as of 2026-09-06T04:29:27Z
 
 **22 axes measured · 14 model fleets · 3 public leader scores · 8 fact runs · TIE is TIE · not a certificate.**
 
-`GET https://councilof.ai/api/gspc` is the authority. This is a snapshot of that GET, read at `2026-09-05T14:16:14Z`, aligned to the transparency root `root.json` published at `2026-09-05T12:39:29Z`. If the live GET and these files disagree, the live GET wins. A fetch that fails is `UNCHECKABLE` — never a fabricated `0`.
+`GET https://councilof.ai/api/gspc` is the authority. This is a snapshot of that GET, read at `2026-09-06T13:06:59Z`, aligned to the transparency root `root.json` published at `2026-09-06T04:29:27Z`. If the live GET and these files disagree, the live GET wins. A fetch that fails is `UNCHECKABLE` — never a fabricated `0`.
 
 **Measurement, not certification.** A TIE is never a win. An empty slot is a finding, not a zero. No slot is for sale.
 
@@ -15,8 +15,8 @@
 - public leader, over the model-comparison axes: **EXCLUDED_OWN_MODEL** 8 · **NO_SIGNED_CARD** 3 · **SHOWN** 3 (EXCLUDED_OWN_MODEL: our own council specialist led and is not ranked against the vendors we measure; NO_SIGNED_CARD: the leading external model has no signed card in the public index, so no leader is asserted)
 - the payload's own `totals` block prints `public_count` = "22 axis · 22 measured" — **agrees** with the array
 - rows behind the board (`totals.items`, the sum of each axis's n): 969
-- transparency root: `card_count` **167** signed cards, `merkle_root` `6347384aa686920feca2f6cd875664c4719b1cd8224c0021dd7a38347f872353`, `as_of` `2026-09-05T12:39:29Z`
-- frozen banks: 13 of the 22 slots that name a dataset resolve an `items.jsonl` (822 rows in total, canary rows excluded); the others carry their bank in another file or are fact axes with pointers, not items — see the table
+- transparency root: `card_count` **166** signed cards, `merkle_root` `e05a0fc13d927cccb87833319c9fb4c1415155eecd861906044df4e2413b9031`, `as_of` `2026-09-06T04:29:27Z`
+- frozen banks: 12 of the 22 slots that name a dataset resolve an `items.jsonl` (789 rows in total, canary rows excluded); the others carry their bank in another file or are fact axes with pointers, not items — see the table
 - bank slug cross-check: all 13 mapped axes name the expected `csoai/gspc-<short>` slug
 
 ## The 22 axes
@@ -32,7 +32,7 @@
 | `machinery-conformity` | gspc | model-comparison | MachBench | 33 | MEASURED | UNTESTED | NO_SIGNED_CARD | [csoai/gspc-mach](https://huggingface.co/datasets/csoai/gspc-mach) | 33 |
 | `care` | gspc | model-comparison | CareBench | 199 | MEASURED | UNTESTED | EXCLUDED_OWN_MODEL | [csoai/gspc-care](https://huggingface.co/datasets/csoai/gspc-care) | 200 |
 | `cross-reality` | gspc | model-comparison | XRAIV | 32 | MEASURED | UNTESTED | NO_SIGNED_CARD | [csoai/gspc-xr](https://huggingface.co/datasets/csoai/gspc-xr) | 32 |
-| `detector-interop` | gspc | model-comparison | DetBench | 33 | MEASURED | UNTESTED | NO_SIGNED_CARD | [csoai/gspc-det](https://huggingface.co/datasets/csoai/gspc-det) | 33 |
+| `detector-interop` | gspc | model-comparison | DetBench | 33 | MEASURED | UNTESTED | NO_SIGNED_CARD | [csoai/gspc-det](https://huggingface.co/datasets/csoai/gspc-det) | UNCHECKABLE (<urlopen error [Errno 104] Connection reset by peer>) |
 | `art5-safeguard` | gspc | model-comparison | Art5Bench | 36 | MEASURED | UNTESTED | EXCLUDED_OWN_MODEL | [csoai/gspc-art5](https://huggingface.co/datasets/csoai/gspc-art5) | 36 |
 | `swarm` | gspc | model-comparison | SwarmBench v2b | 37 | MEASURED | SEPARATED | qwen2.5:7b (base model) | [csoai/gspc-swarm](https://huggingface.co/datasets/csoai/gspc-swarm) | 41 |
 | `affect` | gspc | model-comparison | AffectBench | 41 | MEASURED | UNTESTED | EXCLUDED_OWN_MODEL | [csoai/gspc-affect](https://huggingface.co/datasets/csoai/gspc-affect) | 42 |
@@ -61,7 +61,7 @@ Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `boa
 | file | what |
 |---|---|
 | `board.json` | the whole live GET, byte-for-byte (sha256 `7de63d582aaa7d7b5685904f30153bfd35fba0e1c1b5293d7583a696ab96c40a`) |
-| `root.json` | the transparency root, byte-for-byte (sha256 `8c6a27eae08cb7570d5b3e570fbecc4f7f3220942cc158c893565aab814b80c2`) |
+| `root.json` | the transparency root, byte-for-byte (sha256 `e02c41de13a6c9e64b43cb26e3febea27d98cb0652ad8bfb429a49b41c4989a6`) |
 | `SNAPSHOT.json` | as_of, read_at, digests, derived counts, bank rows, and the fingerprint every surface is keyed on |
 | `gspc-axes.csv` / `gspc-axes.jsonl` | one row per slot |
 | `check-board.sh` | re-derive the totals and the Merkle root yourself |
@@ -80,4 +80,4 @@ Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `boa
 
 Not a certification, not a rating, not an endorsement, not legal advice. A card is evidence of what specific bytes scored on a frozen bank at a specific time. Measurement, not certification.
 
-Issuer: CSOAI Ltd (GB, Companies House 16939677). Board data licence as printed by the payload: `CC-BY-4.0`. Generated by `scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)`; fingerprint `a18b9974b9581e85a5305c3f013722e3935f0c0b819d5f8a163a06e4089ccc64`.
+Issuer: CSOAI Ltd (GB, Companies House 16939677). Board data licence as printed by the payload: `CC-BY-4.0`. Generated by `scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)`; fingerprint `6ef2b173ead3c99c74e41f18213612c5997f5faa77340a24c498a1694aaa505e`.
