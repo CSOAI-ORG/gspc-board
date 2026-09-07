@@ -297,7 +297,12 @@
       "financial": {
         "axes": 8,
         "measured": 8,
-        "note": "The 8 financial/domain axis (ADR-001), all MEASURED as deterministic-facts runs — issuer-account flags read off the public ledger (financial n=16 on the live XRPL reader; provenance-controls n=6) and public statistical series, graded by rule with no model, no fleet and no judgement. None of the eight is a model comparison, so none has a leader, an accuracy or a separation determination, and none contributes to any mean below — measured is not the same as scored. The two former index slots are measured as component facts (ai-adoption-components, labour-components), never restored to the retired MEASURED-INDEX-v0.1 sticker (C-2026-0826-05)."
+        "as_of": "2026-09-07T11:30:35Z",
+        "reader_state": "REACHABLE",
+        "reader_as_of": "2026-09-06T23:49:21Z",
+        "source": "/interop/financial-facts-as-of.json",
+        "risk_verdict": "UNMEASURED",
+        "note": "The 8 financial/domain axis (ADR-001), all MEASURED as deterministic-facts runs — issuer-account flags read off the public ledger (financial n=16 on the live XRPL reader; provenance-controls n=6) and public statistical series, graded by rule with no model, no fleet and no judgement. None of the eight is a model comparison, so none has a leader, an accuracy or a separation determination, and none contributes to any mean below — measured is not the same as scored. The two former index slots are measured as component facts (ai-adoption-components, labour-components), never restored to the retired MEASURED-INDEX-v0.1 sticker (C-2026-0826-05). as_of is the producer run (scripts/grade_financial_ledgers.py), never a typed 2026-08-25."
       }
     },
     "sweep_note": "Swept 2026-08-26 under ADR-001. The 8 financial/domain axis were ruled in on 2026-08-24 but were absent from this payload until the sweep, so this endpoint reported 14 — the un-swept state. All 8 now carry published deterministic-facts run artifacts, so every one of the 22 axis on the board has a run behind it: 14 model-comparison axes and 8 deterministic-fact axes. The fact axes carry no accuracy and no leader — measured is not the same as scored. 1 run artifact carries an Ed25519 signature; 7 are content-addressed but unsigned. No signature is inferred from a content_id.",
@@ -854,6 +859,8 @@
       "colour": "#fbbf24",
       "hue": 43,
       "note": "MEASURED for on-chain control facts only, and only those — one axis family over six instruments. Deterministic: the rubric reads account-root flags (RequireAuth, NoFreeze, GlobalFreeze) and the declared Domain off the public ledger and decodes them; there is no model, no judgement, no score and no ranking. Measured 2026-08-25 across 6 issuers (RLUSD, Ondo OUSG, OpenEden TBILL, Archax abrdn MMF, Braza USDB, Braza BBRL); a stranger re-runs the fetch and compares. Signed run v0.2, content_id 29369542cb537f38. Findings: 3 of 6 enforce allowlisting, 6 of 6 retain issuer freeze capability, 6 of 6 declare an identity domain. TWO BOUNDARIES THAT ARE PART OF THE MEASUREMENT, NOT CAVEATS ON IT. First, the facts are read from mainnet but the attestations are carried on DEVNET — mainnet attestation is PLANNED and not live, and nothing is attested on any Ethereum chain. Second, THE RISK VERDICT IS UNMEASURED: what these facts imply about an instrument's safety, solvency or creditworthiness needs counsel and is not measured here. This is not a rating, not advice, not a ranking, and not an endorsement of any named instrument. Supersedes the v0.1 run.",
+      "facts_as_of": "2026-09-07T11:30:35Z",
+      "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-provenance-controls"
     },
     {
@@ -872,6 +879,8 @@
       "colour": "#fbbf24",
       "hue": 43,
       "note": "MEASURED v0.3 over the live XRPL reader-16 (start set RLUSD/OUSG/USDB/BBRL bidirectional, then the twelve well-known/registry rows). Three-state per fact: 1 PASS, 6 FAIL, 9 UNCHECKABLE (no on-chain declared Domain = no deterministic disclosure surface; UNREACHABLE is never FAIL). Self-declare without attestation language is FAIL. Archax x abrdn and OpenEden TBILL are off this reader — parked under rwa-attest-other. Risk verdict UNMEASURED. Not a rating.",
+      "facts_as_of": "2026-09-07T11:30:35Z",
+      "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-reserve-attestation"
     },
     {
@@ -889,6 +898,8 @@
       "colour": "#fbbf24",
       "hue": 43,
       "note": "MEASURED v0.3 for declaration presence on a retrieved URL, over the live XRPL reader-16. 3 PASS, 4 FAIL, 9 UNCHECKABLE (no on-chain Domain; UNREACHABLE is never FAIL). Never compliance. Risk verdict UNMEASURED. Not a rating.",
+      "facts_as_of": "2026-09-07T11:30:35Z",
+      "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-regulatory-framework"
     },
     {
@@ -906,6 +917,8 @@
       "colour": "#fbbf24",
       "hue": 43,
       "note": "MEASURED v0.3 from GET /api/xrpl (writes_board=false) over all 16 reader rows: 16 PASS on distributed classification. represented>>distributed stays UNCHECKABLE (no RWA.xyz key; no same-unit pair). EURQ/USDQ reader sig_ed25519=null stays flagged. Risk verdict UNMEASURED. Not a rating.",
+      "facts_as_of": "2026-09-07T11:30:35Z",
+      "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-distribution-integrity"
     },
     {
@@ -923,6 +936,8 @@
       "colour": "#fbbf24",
       "hue": 43,
       "note": "MEASURED v0.3 for named-string presence on retrieved pages, over the live XRPL reader-16: custodian 1 PASS / 6 FAIL / 9 UNCHECKABLE. Disclosure only — never custodian or auditor quality. Risk verdict UNMEASURED. Not a rating.",
+      "facts_as_of": "2026-09-07T11:30:35Z",
+      "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-custody-disclosure"
     },
     {
@@ -941,6 +956,8 @@
       "colour": "#fbbf24",
       "hue": 43,
       "note": "MEASURED as two Eurostat series (13.48% / 41.17% 2024). Not an index. No formula file. C-2026-0826-05: do not restore MEASURED-INDEX-v0.1. Former slot id ai-economy-index.",
+      "facts_as_of": "2026-09-07T11:30:35Z",
+      "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-ai-economy-index"
     },
     {
@@ -959,6 +976,8 @@
       "colour": "#fbbf24",
       "hue": 43,
       "note": "MEASURED as two labour series (participation 57.58%, unemployment 5.92% 2024). Not an index. C-2026-0826-05: do not restore MEASURED-INDEX-v0.1. Former slot id human-labour-index.",
+      "facts_as_of": "2026-09-07T11:30:35Z",
+      "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-human-labour-index"
     },
     {
@@ -976,6 +995,8 @@
       "colour": "#fbbf24",
       "hue": 43,
       "note": "MEASURED as disclosure facts on 8 frozen URLs. Fleet size / hours / incidents stay UNMEASURED inside the card. Vendor blogs are not a bank. Not an index.",
+      "facts_as_of": "2026-09-07T11:30:35Z",
+      "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-humanoid-labour-index"
     }
   ],
@@ -1119,7 +1140,7 @@
     "attests": "integrity of this board snapshot as published by the site (NOT a re-measurement)",
     "signer": "did:web:csoai.org#board-attestation-1",
     "alg": "Ed25519",
-    "sig": "bc1501d63a427dd0b60e111b7eed9924b4c9be1e146f5b324eee00731d5877494f77ed8f4b9709fa8c2fab998efc5c59833e736928608745c6db4e3d0394ec03",
+    "sig": "87e97636a7b6e4d1e4615449d95e82c865e31b2fb0dab180ea68c3d71530f9a905074f5d392baf313f807c89ffaabce7e00691e3989cdd214c8f2e95588c6405",
     "public_key_x": "k2fPWb6ctyu8l5at8FYgHsHFit_qoT-DssW3VNbCAXA",
     "sig_input": "Ed25519 over the RAW UTF-8 BYTES (not a digest) of canonical JSON of this payload with the site_attestation field removed. Canonical JSON here means: object keys sorted by code point, recursively; no whitespace (separators ',' and ':'); non-ASCII emitted LITERALLY as UTF-8, never as \\uXXXX escapes (Python ensure_ascii=FALSE — ensure_ascii=True is the wrong reading and will fail, this payload contains non-ASCII characters); numbers serialised by ECMAScript Number::toString, so an integral float renders 0, not 0.0. This is NOT the rule used by the signed measurement cards under /signed/cards/, which were minted with ensure_ascii=TRUE and whose ids are SHA-256 over those bytes — see /signed/HOW-TO-VERIFY.md. The two are deliberately different and are each signed over the bytes they were signed over.",
     "sig_input_ensure_ascii": false,
