@@ -1,8 +1,8 @@
-# GSPC board — snapshot as of 2026-09-11T12:45:44Z
+# GSPC board — snapshot as of 2026-09-12T10:40:14Z
 
 **22 axes measured · 14 model fleets · 3 public leader scores · 8 fact runs · TIE is TIE · not a certificate.**
 
-`GET https://councilof.ai/api/gspc` is the authority. This is a snapshot of that GET, read at `2026-09-11T13:49:04Z`, aligned to the transparency root `root.json` published at `2026-09-11T12:45:44Z`. If the live GET and these files disagree, the live GET wins. A fetch that fails is `UNCHECKABLE` — never a fabricated `0`.
+`GET https://councilof.ai/api/gspc` is the authority. This is a snapshot of that GET, read at `2026-09-12T12:08:07Z`, aligned to the transparency root `root.json` published at `2026-09-12T10:40:14Z`. If the live GET and these files disagree, the live GET wins. A fetch that fails is `UNCHECKABLE` — never a fabricated `0`.
 
 **Measurement, not certification.** A TIE is never a win. An empty slot is a finding, not a zero. No slot is for sale.
 
@@ -11,11 +11,11 @@
 - slots on the board: **22**
 - by status: **MEASURED** 22
 - model-comparison axes (a fleet answers a frozen bank, graded deterministically): **14** · deterministic-fact axes (public ledgers and series; no model, no leader, no accuracy): **8**
-- separation, over the model-comparison axes only: **SEPARATED** 1 · **TIE** 2 · **UNTESTED** 11 — a TIE is not a separated leader; UNTESTED is not a win either
+- separation, over the model-comparison axes only: **TIE** 2 · **UNTESTED** 12 — a TIE is not a separated leader; UNTESTED is not a win either
 - public leader, over the model-comparison axes: **EXCLUDED_OWN_MODEL** 8 · **NO_SIGNED_CARD** 3 · **SHOWN** 3 (EXCLUDED_OWN_MODEL: our own council specialist led and is not ranked against the vendors we measure; NO_SIGNED_CARD: the leading external model has no signed card in the public index, so no leader is asserted)
 - the payload's own `totals` block prints `public_count` = "22 axis · 22 measured" — **agrees** with the array
 - rows behind the board (`totals.items`, the sum of each axis's n): 969
-- transparency root: `card_count` **169** signed cards, `merkle_root` `94e99db52a67931aa38ca6b0aa4574c28a600204107b26ad3beef9b9e366e292`, `as_of` `2026-09-11T12:45:44Z`
+- transparency root: `card_count` **197** signed cards, `merkle_root` `3446586f25a71eff0080617ed060727b4a79c6861367af32ee3a4e298b7cb5c3`, `as_of` `2026-09-12T10:40:14Z`
 - frozen banks: 13 of the 22 slots that name a dataset resolve an `items.jsonl` (818 rows in total, canary rows excluded); the others carry their bank in another file or are fact axes with pointers, not items — see the table
 - bank slug cross-check: all 13 mapped axes name the expected `csoai/gspc-<short>` slug
 
@@ -34,7 +34,7 @@
 | `cross-reality` | gspc | model-comparison | XRAIV | 32 | MEASURED | UNTESTED | NO_SIGNED_CARD | [csoai/gspc-xr](https://huggingface.co/datasets/csoai/gspc-xr) | 32 |
 | `detector-interop` | gspc | model-comparison | DetBench | 33 | MEASURED | UNTESTED | NO_SIGNED_CARD | [csoai/gspc-det](https://huggingface.co/datasets/csoai/gspc-det) | 33 |
 | `art5-safeguard` | gspc | model-comparison | Art5Bench | 36 | MEASURED | UNTESTED | EXCLUDED_OWN_MODEL | [csoai/gspc-art5](https://huggingface.co/datasets/csoai/gspc-art5) | 36 |
-| `swarm` | gspc | model-comparison | SwarmBench v2b | 37 | MEASURED | SEPARATED | qwen2.5:7b (base model) | [csoai/gspc-swarm](https://huggingface.co/datasets/csoai/gspc-swarm) | 37 |
+| `swarm` | gspc | model-comparison | SwarmBench v2b | 37 | MEASURED | UNTESTED | qwen2.5:7b (base model) | [csoai/gspc-swarm](https://huggingface.co/datasets/csoai/gspc-swarm) | 37 |
 | `affect` | gspc | model-comparison | AffectBench | 41 | MEASURED | UNTESTED | EXCLUDED_OWN_MODEL | [csoai/gspc-affect](https://huggingface.co/datasets/csoai/gspc-affect) | 42 |
 | `jail` | gspc | model-comparison | GoldBank-Detector | 71 | MEASURED | TIE | qwen2.5:0.5b-instruct (base model) | [csoai/gspc-jail-goldbank](https://huggingface.co/datasets/csoai/gspc-jail-goldbank) | NO_ITEMS_JSONL |
 | `provenance-controls` | financial | deterministic-facts | ChainFacts | 6 | MEASURED | — | — | [csoai/gspc-provenance-controls](https://huggingface.co/datasets/csoai/gspc-provenance-controls) | NO_ITEMS_JSONL |
@@ -60,8 +60,8 @@ Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `boa
 
 | file | what |
 |---|---|
-| `board.json` | the whole live GET, byte-for-byte (sha256 `86abe0b3decc8712e494cc2b06436bfe1f11fd73f8bb5cde51d8e8ee27e594f2`) |
-| `root.json` | the transparency root, byte-for-byte (sha256 `a6f79e25917fb60bbb2276f1cabe6b6e755e1558bdb9e6b44d1c84474560dca2`) |
+| `board.json` | the whole live GET, byte-for-byte (sha256 `9e738a61837d90348be541c9d876f8400ca078622b1d7e2587abb20509cc1c39`) |
+| `root.json` | the transparency root, byte-for-byte (sha256 `0dd5a8d9fbeb8243d2e5c58ffe686381c04977bb658e0eca783f2f93f98035dc`) |
 | `SNAPSHOT.json` | as_of, read_at, digests, derived counts, bank rows, and the fingerprint every surface is keyed on |
 | `gspc-axes.csv` / `gspc-axes.jsonl` | one row per slot |
 | `check-board.sh` | re-derive the totals and the Merkle root yourself |
@@ -80,39 +80,4 @@ Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `boa
 
 Not a certification, not a rating, not an endorsement, not legal advice. A card is evidence of what specific bytes scored on a frozen bank at a specific time. Measurement, not certification.
 
-Issuer: CSOAI Ltd (GB, Companies House 16939677). Board data licence as printed by the payload: `CC-BY-4.0`. Generated by `scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)`; fingerprint `c17374d714baf32ba38adea1052489a1f3b6d139a229a6a8bc75a19b0eba8df5`.
-
-## Evidence states — what each label means
-
-The board uses these states to describe the evidence lifecycle of every subject and axis:
-
-| State | Meaning |
-|-------|---------|
-| **INDEXED** | Subject exists in the catalog but has not been measured |
-| **MEASURED** | Subject has a completed measurement run with results |
-| **SIGNED** | Measurement card has an Ed25519 signature |
-| **ROOTED** | Card is included in the Merkle root (`root.json`) |
-| **ANCHORED** | Root is anchored on a public chain (Rekor, OTS, XRPL, Base, Ethereum) |
-| **SETTLED** | Payment has been received and verified |
-| **REPRODUCED** | Measurement has been independently reproduced |
-| **UNCHECKABLE** | Verification failed or data unavailable |
-
-A subject can be INDEXED without being MEASURED. A card can be MEASURED without being SIGNED. A root can be SIGNED without being ANCHORED. These are independent states, not a single pass label.
-
-**The board shows MEASURED, SIGNED, and UNCHECKABLE visibly. INDEXED, ROOTED, ANCHORED, SETTLED, and REPRODUCED are documented here and in the canonical catalog at `well-known/ai-catalog.json`.**
-
-## Evidence column — what the board shows
-
-The board table now includes an **Evidence** column showing the evidence lifecycle state for each axis:
-
-| State | Meaning | Color |
-|-------|---------|-------|
-| **SIGNED** | Axis has a signed measurement card in the public index | Green |
-| **MEASURED** | Axis is measured but no signed card published yet | Slate |
-| **INDEXED** | Axis exists in the catalog but has not been measured | Dim |
-
-Click any row to see the full evidence detail: card hash, signature, root inclusion, limitations, and corrections.
-
-The board fetches live data from `councilof.ai/api/gspc` and the card index from `councilof.ai/signed/card_index.json`. A card is **SIGNED** when its hash appears in the card index with a valid Ed25519 signature. A card is **MEASURED** when the axis has results but no signed card. An axis is **INDEXED** when it exists in the catalog but has no measurement run.
-
-**Verification:** Paste any card into https://councilof.ai/gspc-verify — three states only: VALID, INVALID, UNCHECKABLE.
+Issuer: CSOAI Ltd (GB, Companies House 16939677). Board data licence as printed by the payload: `CC-BY-4.0`. Generated by `scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)`; fingerprint `9b3a3b36c6af23df85b023237a1576dadbabbecf0793509e16999a86ed6342de`.

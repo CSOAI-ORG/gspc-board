@@ -1,18 +1,18 @@
 {
  "kind": "csoai.gspc-spray-snapshot/1",
- "as_of": "2026-09-11T12:45:44Z",
- "read_at": "2026-09-11T13:49:04Z",
+ "as_of": "2026-09-12T10:40:14Z",
+ "read_at": "2026-09-12T12:08:07Z",
  "lid": "22 axes measured · 14 model fleets · 3 public leader scores · 8 fact runs · TIE is TIE · not a certificate.",
  "board_url": "https://councilof.ai/api/gspc",
  "root_url": "https://councilof.ai/root.json",
- "board_sha256": "86abe0b3decc8712e494cc2b06436bfe1f11fd73f8bb5cde51d8e8ee27e594f2",
- "board_content_sha256": "fda3f3fa65e4f3eea9d13f6cf7d0adca4fe901703077e1008b92b3df3b4c929d",
- "root_sha256": "a6f79e25917fb60bbb2276f1cabe6b6e755e1558bdb9e6b44d1c84474560dca2",
- "merkle_root": "94e99db52a67931aa38ca6b0aa4574c28a600204107b26ad3beef9b9e366e292",
- "card_count": 169,
+ "board_sha256": "9e738a61837d90348be541c9d876f8400ca078622b1d7e2587abb20509cc1c39",
+ "board_content_sha256": "a82ddc797469a12f97dbdcf39b689fbbb2036fdcc53c9b42183aaafca4276129",
+ "root_sha256": "0dd5a8d9fbeb8243d2e5c58ffe686381c04977bb658e0eca783f2f93f98035dc",
+ "merkle_root": "3446586f25a71eff0080617ed060727b4a79c6861367af32ee3a4e298b7cb5c3",
+ "card_count": 197,
  "did_intended": "did:web:csoai.org#board-attestation-1",
  "board_signer": "did:web:csoai.org#board-attestation-1",
- "fingerprint": "c17374d714baf32ba38adea1052489a1f3b6d139a229a6a8bc75a19b0eba8df5",
+ "fingerprint": "9b3a3b36c6af23df85b023237a1576dadbabbecf0793509e16999a86ed6342de",
  "fingerprint_rule": "sha256(board_content_sha256 | merkle_root | card_count); board_content_sha256 = sha256 of canonical JSON (sorted keys, no whitespace, UTF-8 literal) of board.json minus site_attestation",
  "counts": {
   "slots": 22,
@@ -28,9 +28,8 @@
    "deterministic-facts": 8
   },
   "separation_over_model_comparison": {
-   "UNTESTED": 11,
-   "TIE": 2,
-   "SEPARATED": 1
+   "UNTESTED": 12,
+   "TIE": 2
   },
   "public_leader_state_over_model_comparison": {
    "EXCLUDED_OWN_MODEL": 8,
@@ -43,9 +42,9 @@
    "unmeasured_axes": 0,
    "public_count": "22 axis · 22 measured",
    "comparison_axes": 14,
-   "separated_leads": 1,
+   "separated_leads": 0,
    "ties": 2,
-   "untested_separations": 11,
+   "untested_separations": 12,
    "public_leader_count": 3,
    "items": 969
   },
