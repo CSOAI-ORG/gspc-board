@@ -100,3 +100,19 @@ The board uses these states to describe the evidence lifecycle of every subject 
 A subject can be INDEXED without being MEASURED. A card can be MEASURED without being SIGNED. A root can be SIGNED without being ANCHORED. These are independent states, not a single pass label.
 
 **The board shows MEASURED, SIGNED, and UNCHECKABLE visibly. INDEXED, ROOTED, ANCHORED, SETTLED, and REPRODUCED are documented here and in the canonical catalog at `well-known/ai-catalog.json`.**
+
+## Evidence column — what the board shows
+
+The board table now includes an **Evidence** column showing the evidence lifecycle state for each axis:
+
+| State | Meaning | Color |
+|-------|---------|-------|
+| **SIGNED** | Axis has a signed measurement card in the public index | Green |
+| **MEASURED** | Axis is measured but no signed card published yet | Slate |
+| **INDEXED** | Axis exists in the catalog but has not been measured | Dim |
+
+Click any row to see the full evidence detail: card hash, signature, root inclusion, limitations, and corrections.
+
+The board fetches live data from `councilof.ai/api/gspc` and the card index from `councilof.ai/signed/card_index.json`. A card is **SIGNED** when its hash appears in the card index with a valid Ed25519 signature. A card is **MEASURED** when the axis has results but no signed card. An axis is **INDEXED** when it exists in the catalog but has no measurement run.
+
+**Verification:** Paste any card into https://councilof.ai/gspc-verify — three states only: VALID, INVALID, UNCHECKABLE.
