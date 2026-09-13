@@ -1,7 +1,7 @@
-{"file": "README.md", "bytes": 10904, "sha256": "fd7130afdbeb21fe2318e727757ef60c096e7bc8a228d5ce84b15f3d13ac0ba5"}
-{"file": "SNAPSHOT.json", "bytes": 9418, "sha256": "599e9ec6188702511b65a6d02ffcd1b355fd88a2c4afd2d549316c632d9e858e"}
+{"file": "README.md", "bytes": 10904, "sha256": "c3b5982399f199105b4db098fb39de715cf7c431c3ba0ba86eadad5259e6de52"}
+{"file": "SNAPSHOT.json", "bytes": 9418, "sha256": "b1e85bef0c2c72c24369c6599149d76f7a4b3071565ffaaf6e9015ce29677185"}
 {"file": "board.json", "bytes": 68010, "sha256": "9e738a61837d90348be541c9d876f8400ca078622b1d7e2587abb20509cc1c39"}
 {"file": "check-board.sh", "bytes": 2493, "sha256": "b470e050887b29044726a6ab1423a1ffb5cea436711abbba6187154bd533ff4d"}
 {"file": "gspc-axes.csv", "bytes": 5413, "sha256": "2faa45a318eace134bbfc6681272d457db5fd2534a12ca641afba837f300c2d0"}
 {"file": "gspc-axes.jsonl", "bytes": 10428, "sha256": "1ce98eb631bcff9c59e6212b64c931323f08f75426d466ca03cd56f5363cdea7"}
-{"file": "root.json", "bytes": 18910, "sha256": "fcb3bea47de681bf9560e1da355806b1ffca78a2c0c1f7cf11ea4673ae75090d"}
+{"file": "root.json", "bytes": 20998, "sha256": "222538d5f9fa72281d2696ee9839837b498cf93b117233a8ac9e26622f9fa51d"}
