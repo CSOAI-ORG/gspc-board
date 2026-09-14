@@ -878,7 +878,7 @@
       "run_attestation": "CONTENT_ADDRESSED_UNSIGNED",
       "colour": "#fbbf24",
       "hue": 43,
-      "note": "MEASURED v0.3 over the live XRPL reader-16 (start set RLUSD/OUSG/USDB/BBRL bidirectional, then the twelve well-known/registry rows). Three-state per fact: 1 PASS, 6 FAIL, 9 UNCHECKABLE (no on-chain declared Domain = no deterministic disclosure surface; UNREACHABLE is never FAIL). Self-declare without attestation language is FAIL. Archax x abrdn and OpenEden TBILL are off this reader — parked under rwa-attest-other. Risk verdict UNMEASURED. Not a rating.",
+      "note": "MEASURED v0.3 over the live XRPL reader-16 (start set RLUSD/OUSG/USDB/BBRL bidirectional, then the twelve well-known/registry rows). Three-state per fact: 3 PASS, 4 FAIL, 9 UNCHECKABLE (no on-chain declared Domain = no deterministic disclosure surface; UNREACHABLE is never FAIL). Self-declare without attestation language is FAIL. Archax x abrdn and OpenEden TBILL are off this reader — parked under rwa-attest-other. Risk verdict UNMEASURED. Not a rating.",
       "facts_as_of": "2026-09-07T11:30:35Z",
       "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-reserve-attestation"
@@ -897,7 +897,7 @@
       "run_attestation": "CONTENT_ADDRESSED_UNSIGNED",
       "colour": "#fbbf24",
       "hue": 43,
-      "note": "MEASURED v0.3 for declaration presence on a retrieved URL, over the live XRPL reader-16. 3 PASS, 4 FAIL, 9 UNCHECKABLE (no on-chain Domain; UNREACHABLE is never FAIL). Never compliance. Risk verdict UNMEASURED. Not a rating.",
+      "note": "MEASURED v0.3 for declaration presence on a retrieved URL, over the live XRPL reader-16. 4 PASS, 3 FAIL, 9 UNCHECKABLE (no on-chain Domain; UNREACHABLE is never FAIL). Never compliance. Risk verdict UNMEASURED. Not a rating.",
       "facts_as_of": "2026-09-07T11:30:35Z",
       "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-regulatory-framework"
@@ -1140,7 +1140,7 @@
     "attests": "integrity of this board snapshot as published by the site (NOT a re-measurement)",
     "signer": "did:web:csoai.org#board-attestation-1",
     "alg": "Ed25519",
-    "sig": "9865e03bdaf5fcd5a905a28c2b18bf73cb8930395d46f19e4c2fd757ac9652ae14844fd2ad68a22facd200b772903b1b9d009732cf8f65498a0fa8f33e3be505",
+    "sig": "0ad875fc185635a159655af2da27aa184b2f22ff3c5e0e1233d9693784f24a638aa39b8f6b5ddff9284b22ddccc69e3cc8a5ff8a1b2ff018ce14818000b3f80e",
     "public_key_x": "k2fPWb6ctyu8l5at8FYgHsHFit_qoT-DssW3VNbCAXA",
     "sig_input": "Ed25519 over the RAW UTF-8 BYTES (not a digest) of canonical JSON of this payload with the site_attestation field removed. Canonical JSON here means: object keys sorted by code point, recursively; no whitespace (separators ',' and ':'); non-ASCII emitted LITERALLY as UTF-8, never as \\uXXXX escapes (Python ensure_ascii=FALSE — ensure_ascii=True is the wrong reading and will fail, this payload contains non-ASCII characters); numbers serialised by ECMAScript Number::toString, so an integral float renders 0, not 0.0. This is NOT the rule used by the signed measurement cards under /signed/cards/, which were minted with ensure_ascii=TRUE and whose ids are SHA-256 over those bytes — see /signed/HOW-TO-VERIFY.md. The two are deliberately different and are each signed over the bytes they were signed over.",
     "sig_input_ensure_ascii": false,
