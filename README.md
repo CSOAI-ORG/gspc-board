@@ -1,8 +1,8 @@
-# GSPC board — snapshot as of 2026-09-13T08:40:49Z
+# GSPC board — snapshot as of 2026-09-13T19:27:08Z
 
 **22 axes measured · 14 model fleets · 3 public leader scores · 8 fact runs · TIE is TIE · not a certificate.**
 
-`GET https://councilof.ai/api/gspc` is the authority. This is a snapshot of that GET, read at `2026-09-13T16:50:22Z`, aligned to the transparency root `root.json` published at `2026-09-13T08:40:49Z`. If the live GET and these files disagree, the live GET wins. A fetch that fails is `UNCHECKABLE` — never a fabricated `0`.
+`GET https://councilof.ai/api/gspc` is the authority. This is a snapshot of that GET, read at `2026-09-14T01:39:26Z`, aligned to the transparency root `root.json` published at `2026-09-13T19:27:08Z`. If the live GET and these files disagree, the live GET wins. A fetch that fails is `UNCHECKABLE` — never a fabricated `0`.
 
 **Measurement, not certification.** A TIE is never a win. An empty slot is a finding, not a zero. No slot is for sale.
 
@@ -15,7 +15,7 @@
 - public leader, over the model-comparison axes: **EXCLUDED_OWN_MODEL** 8 · **NO_SIGNED_CARD** 3 · **SHOWN** 3 (EXCLUDED_OWN_MODEL: our own council specialist led and is not ranked against the vendors we measure; NO_SIGNED_CARD: the leading external model has no signed card in the public index, so no leader is asserted)
 - the payload's own `totals` block prints `public_count` = "22 axis · 22 measured" — **agrees** with the array
 - rows behind the board (`totals.items`, the sum of each axis's n): 969
-- transparency root: `card_count` **269** signed cards, `merkle_root` `66aa3929335e957a5a239b34dcc8f58fd7c280cc59db7c1dd3d233ccf80802fe`, `as_of` `2026-09-13T08:40:49Z`
+- transparency root: `card_count` **291** signed cards, `merkle_root` `93a244741200be98934a66484baa43381864e1b30a3509200308308adff51316`, `as_of` `2026-09-13T19:27:08Z`
 - frozen banks: 13 of the 22 slots that name a dataset resolve an `items.jsonl` (818 rows in total, canary rows excluded); the others carry their bank in another file or are fact axes with pointers, not items — see the table
 - bank slug cross-check: all 13 mapped axes name the expected `csoai/gspc-<short>` slug
 
@@ -52,7 +52,7 @@ Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `boa
 
 1. **The board's totals are derived, not typed.** `./check-board.sh` fetches the live GET, recounts the slots and the MEASURED axes from the array, and fails loudly on any disagreement.
 2. **One measurement.** Every measurement is an Ed25519-signed card. Paste it into <https://councilof.ai/gspc-verify> (free, no account) or follow <https://councilof.ai/signed/HOW-TO-VERIFY.md> and check by hand. From Python: `pip install "csoai-gspc[verify]"` then `csoai-gspc verify <card_id>` — three states only: VALID, INVALID, UNCHECKABLE.
-3. **Root inclusion.** `root.json` lists `card_sha256[]` for every published card and commits to them in `merkle_root`. `./check-board.sh` recomputes that root from the list using the rule the root states for itself — leaf: "sha256(canonical(card minus sha256 and sig_ed25519)) \u2014 binds subject, source_urls, tags, as_of, did, surface, unmeasured and payload"; node: "parent = sha256(left || right) over RAW 32-byte digests, pairwise, bottom-up. An odd node at any level is paired WITH ITSELF (Bitcoin-style duplication), not promoted. No domain-separation prefix.". A verifier MUST reject any presentation where `len(card_sha256) != card_count`, and any inclusion proof with `index >= card_count`. A card is included when its sha256 appears in the list and the recomputed root matches.
+3. **Root inclusion.** `root.json` lists `card_sha256[]` for its specific public-root corpus and commits to those leaves in `merkle_root`. `./check-board.sh` recomputes that root from the list using the rule the root states for itself — leaf: "sha256(canonical(card minus sha256 and sig_ed25519)) \u2014 binds subject, source_urls, tags, as_of, did, surface, unmeasured and payload"; node: "parent = sha256(left || right) over RAW 32-byte digests, pairwise, bottom-up. An odd node at any level is paired WITH ITSELF (Bitcoin-style duplication), not promoted. No domain-separation prefix.". A verifier MUST reject any presentation where `len(card_sha256) != card_count`, and any inclusion proof with `index >= card_count`. A card is included only when its leaf digest, computed under the stated leaf rule, appears in that list and the recomputed root matches. Other catalogues and board measurements are not automatically covered by this root.
 4. **Keys.** Signatures resolve through `did:web:csoai.org` → <https://councilof.ai/.well-known/did.json>. The board's `site_attestation.signer` is `did:web:csoai.org#board-attestation-1`; the root's `did_intended` is `did:web:csoai.org#board-attestation-1`; cards sign under the card-attestation key in the same document. Pin against the DID document, never against the key a card ships with.
    - key ids present in did.json at read time: `did:web:csoai.org#site-release-1`, `did:web:csoai.org#estate-chain-1`, `did:web:csoai.org#board-attestation-1`, `did:web:csoai.org#card-attestation-1`, `did:web:csoai.org#gspc-board-22axis-2026`
 
@@ -61,7 +61,7 @@ Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `boa
 | file | what |
 |---|---|
 | `board.json` | the whole live GET, byte-for-byte (sha256 `9e738a61837d90348be541c9d876f8400ca078622b1d7e2587abb20509cc1c39`) |
-| `root.json` | the transparency root, byte-for-byte (sha256 `fc435d7b3e7f32651e98b67aa7f3d0e3b3a03747cef6c23adec404f4a73035fd`) |
+| `root.json` | the transparency root, byte-for-byte (sha256 `8d3284b22b9638fa7b960bbaaf9824a1e69c5885cc93504db68879dbd7b527c0`) |
 | `SNAPSHOT.json` | as_of, read_at, digests, derived counts, bank rows, and the fingerprint every surface is keyed on |
 | `gspc-axes.csv` / `gspc-axes.jsonl` | one row per slot |
 | `check-board.sh` | re-derive the totals and the Merkle root yourself |
@@ -80,4 +80,4 @@ Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `boa
 
 Not a certification, not a rating, not an endorsement, not legal advice. A card is evidence of what specific bytes scored on a frozen bank at a specific time. Measurement, not certification.
 
-Issuer: CSOAI Ltd (GB, Companies House 16939677). Board data licence as printed by the payload: `CC-BY-4.0`. Generated by `scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)`; fingerprint `7862bb67d0943d6b73f8f3cfe1898987507be520cd3cf66eb31803ba37f07194`.
+Issuer: CSOAI Ltd (GB, Companies House 16939677). Board data licence as printed by the payload: `CC-BY-4.0`. Generated by `scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)`; fingerprint `2a6cbff1021dc9e909f1bb2880c089924a8db864f286c3d49af43ca174490ba4`.
