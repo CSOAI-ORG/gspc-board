@@ -1,24 +1,23 @@
 {
  "kind": "csoai.gspc-spray-snapshot/1",
- "as_of": "2026-09-15T07:13:43Z",
- "read_at": "2026-09-17T11:20:04Z",
- "lid": "22 axes measured · 14 model fleets · 3 public leader scores · 8 fact runs · TIE is TIE · not a certificate.",
+ "as_of": "2026-09-22T08:54:02Z",
+ "read_at": "2026-09-23T14:53:24Z",
+ "lid": "23 axes measured · 14 model fleets · 0 separated leaders · 3 public leader scores · 9 fact runs · TIE is TIE · not a certificate.",
  "board_url": "https://councilof.ai/api/gspc",
  "root_url": "https://councilof.ai/root.json",
- "board_sha256": "9699081c10c4106fbded54618c3e5ffbd85616f850448b025649fff5bb7bf631",
- "board_content_sha256": "763b73983566fe2d796eb227dd5f75b54c0e7f528bae6440f2899dbd8d77785c",
- "root_sha256": "dedb49d05cf8a37a65a5eb19332881d804240ef741171edf153cbe053b1368e4",
- "merkle_root": "07dd5eb3eb0e5c9eae40f56ce859a064dff95f2eed47acad64fb54a1aa0122e2",
+ "board_sha256": "be45a7ed47dc7f43a0ab83b75d3ce60909f918ecf386af7c11a78c0d5a708cca",
+ "board_content_sha256": "8aac1b69d4784ff34e63a8515e1d909a86ad348a1e89bfd87cb4966fb305e583",
+ "root_sha256": "ae8bbfcedf7cc30172498110e7df66a4f6c98c4aae69c9f47cdcba2abc1d334e",
+ "merkle_root": "40ce3833118fab76a98c55429a5b06c7c3051915780893f3ab60a25cb31ac0a4",
  "card_count": 305,
  "did_intended": "did:web:csoai.org#board-attestation-1",
  "board_signer": "did:web:csoai.org#board-attestation-1",
- "fingerprint": "880e761c86823ae28ea2b712ac281da3c2181b4b9427d6bdd2f3781d73db1fe3",
+ "fingerprint": "7219bcb45f45aecf35ac6b525d526aaa15430a74a048e159b47b0c0c230fd701",
  "fingerprint_rule": "sha256(board_content_sha256 | merkle_root | card_count); board_content_sha256 = sha256 of canonical JSON (sorted keys, no whitespace, UTF-8 literal) of board.json minus site_attestation",
  "counts": {
   "slots": 23,
   "by_status": {
-   "MEASURED": 22,
-   "UNMEASURED": 1
+   "MEASURED": 23
   },
   "by_family": {
    "gspc": 15,
@@ -26,8 +25,7 @@
   },
   "by_kind": {
    "model-comparison": 14,
-   "declared-slot": 1,
-   "deterministic-facts": 8
+   "deterministic-facts": 9
   },
   "separation_over_model_comparison": {
    "UNTESTED": 12,
@@ -40,15 +38,15 @@
   },
   "printed_totals": {
    "axes": 23,
-   "measured_axes": 22,
-   "unmeasured_axes": 1,
-   "public_count": "23 axis · 22 measured",
+   "measured_axes": 23,
+   "unmeasured_axes": 0,
+   "public_count": "23 axis · 23 measured",
    "comparison_axes": 14,
    "separated_leads": 0,
    "ties": 2,
    "untested_separations": 12,
    "public_leader_count": 3,
-   "items": 969
+   "items": 1230
   },
   "printed_agrees_with_array": true
  },

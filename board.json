@@ -17,7 +17,7 @@
       "signer": "did:web:csoai.org#board-attestation-1",
       "signer_anchored": true,
       "alg": "Ed25519",
-      "signature": "3e66736540daa9e1bf01708505f6c0599fa731379b72ff0fed965b420857c3b7a28b03368643c78d1da911c77503dedbe47825aee4854d2ef3723b7751726700",
+      "signature": "18eb719d07a7ba67e268ea3ba9a58c4a7fbd6122c4a249a0d4f58ba43ece521bb8d7d4401c85dabe86dc6b38915beaa4ba7d971531b621e6ad4c4072f55d8801",
       "public_key_x": "k2fPWb6ctyu8l5at8FYgHsHFit_qoT-DssW3VNbCAXA",
       "preimage": {
         "schema": "csoai.gspc-living/0.2",
@@ -153,9 +153,9 @@
           {
             "axis": "effect-binding",
             "family": "gspc",
-            "kind": "declared-slot",
-            "status": "UNMEASURED",
-            "n": null,
+            "kind": "deterministic-facts",
+            "status": "MEASURED",
+            "n": 261,
             "accuracy": null,
             "separation": null
           },
@@ -290,18 +290,20 @@
   },
   "totals": {
     "axes": 23,
-    "measured_axes": 22,
-    "unmeasured_axes": 1,
-    "quotable_axes": 22,
-    "public_count": "23 axis · 22 measured",
+    "measured_axes": 23,
+    "unmeasured_axes": 0,
+    "quotable_axes": 23,
+    "public_count": "23 axis · 23 measured",
+    "separation_public_count": "0 of 14 model-comparison axes separated a leader · 2 TIE · 12 UNTESTED",
+    "separation_public_count_note": "Read with public_count, never instead of it. measured_axes counts axis with a RUN behind them; it is not a count of axis with a separated leader. SEPARATED, TIE and UNTESTED are three states and none is folded into another. Derived from the axis array, never typed. The same three numbers appear below as separated_leads / ties / untested_separations and in limitations[0]; there is one derivation.",
     "model_fleets": 14,
-    "fact_runs": 8,
-    "count_grammar": "23 axis are on the board; 22 of them carry a measurement and 1 are declared slots with no run behind them. The larger number counts slots, the smaller counts measurements — quote both or quote the smaller. A published slot exists so the gap is visible; it is not evidence of anything having been measured.",
+    "fact_runs": 9,
+    "count_grammar": "23 axes are on the board and every one carries a measurement — no declared slot is empty. Both counts are DERIVED from the axis array, never typed; if a future slot is added with no run behind it, this line separates the two again on its own. A measurement is not a separated leader: 0 of 14 model-comparison axes separated a leader · 2 TIE · 12 UNTESTED. A point-estimate lead is not a measured advantage, and UNTESTED is not a tie.",
     "by_family": {
       "gspc": {
         "axes": 15,
-        "measured": 14,
-        "note": "The 14 behavioural axes: a model fleet answers a frozen bank, graded deterministically."
+        "measured": 15,
+        "note": "The 14 behavioural axes: a model fleet answers a frozen bank, graded deterministically. Plus effect-binding (ADR-002), a deterministic-facts probe of tool-call SERVERS, not a fleet: n counts servers probed, it has no leader, no accuracy and no separation, and it joins no mean."
       },
       "financial": {
         "axes": 8,
@@ -314,12 +316,13 @@
         "note": "The 8 financial/domain axis (ADR-001), all MEASURED as deterministic-facts runs — issuer-account flags read off the public ledger (financial n=16 on the live XRPL reader; provenance-controls n=6) and public statistical series, graded by rule with no model, no fleet and no judgement. None of the eight is a model comparison, so none has a leader, an accuracy or a separation determination, and none contributes to any mean below — measured is not the same as scored. The two former index slots are measured as component facts (ai-adoption-components, labour-components), never restored to the retired MEASURED-INDEX-v0.1 sticker (C-2026-0826-05). as_of is the producer run (scripts/grade_financial_ledgers.py), never a typed 2026-08-25."
       }
     },
-    "sweep_note": "Swept 2026-08-26 under ADR-001. The 8 financial/domain axis were ruled in on 2026-08-24 but were absent from this payload until the sweep, so this endpoint reported 14 — the un-swept state. All 8 now carry published deterministic-facts run artifacts. Today 22 of 23 axis on the board carry a run behind them: 14 model-comparison and 8 deterministic-fact axes. The fact axes carry no accuracy and no leader — measured is not the same as scored. 1 run artifact carries an Ed25519 signature; 7 are content-addressed but unsigned. No signature is inferred from a content_id.",
+    "sweep_note": "Swept 2026-08-26 under ADR-001. The 8 financial/domain axis were ruled in on 2026-08-24 but were absent from this payload until the sweep, so this endpoint reported 14 — the un-swept state. All 8 now carry published deterministic-facts run artifacts. Today 23 of 23 axis on the board carry a run behind them: 14 model-comparison and 9 deterministic-fact axes. The fact axes carry no accuracy and no leader — measured is not the same as scored. 2 run artifacts carry an Ed25519 signature; 7 are content-addressed but unsigned. No signature is inferred from a content_id.",
     "financial_run_attestations": {
-      "run_artifacts": 8,
-      "ed25519_signed": 1,
+      "run_artifacts": 9,
+      "ed25519_signed": 2,
       "content_addressed_unsigned": 7,
       "signed_axes": [
+        "effect-binding",
         "provenance-controls"
       ],
       "unsigned_axes": [
@@ -331,11 +334,11 @@
         "labour-components",
         "humanoid-labour-index"
       ],
-      "note": "Derived from each deterministic-facts axis's run_attestation field. A content_id proves identity of bytes, not signer authorization."
+      "note": "Derived from each deterministic-facts axis's run_attestation field, in BOTH families since 2026-09-22 (effect-binding is a gspc-family fact run). A content_id proves identity of bytes, not signer authorization."
     },
     "license": "CC-BY-4.0",
     "license_note": "Board data is CC-BY-4.0 (attribute: Council of AI, CSOAI Ltd 16939677, councilof.ai). Our own valve-2 bench-card flagged the payload's missing licence field — fixed same day.",
-    "items": 969,
+    "items": 1230,
     "items_note": "items sums each axis's n. Financial-axis n values count issuer accounts, public series, or frozen vendor URLs as declared on each row — not bank items. Unmeasured slots contribute 0 because nothing was measured. Read items as 'rows behind the board', not as a single comparable sample.",
     "comparison_axes": 14,
     "separated_leads": 0,
@@ -344,7 +347,7 @@
     "separation_scope_note": "Separation asks whether a leader's lead over a fleet is statistically real, so it applies only to the model-comparison axes. The financial axes have no fleet and no leader: they are not counted as untested, because no separation test is applicable to them.",
     "externally_led_axes": 3,
     "public_leader_count": 3,
-    "lid": "22 axes measured · 14 model fleets · 3 public leader scores · 8 fact runs · TIE is TIE · not a certificate.",
+    "lid": "23 axes measured · 14 model fleets · 0 separated leaders · 3 public leader scores · 9 fact runs · TIE is TIE · not a certificate.",
     "own_leaders_excluded": 8,
     "own_leaders_excluded_axes": [
       "governance",
@@ -852,16 +855,20 @@
     {
       "axis": "effect-binding",
       "family": "gspc",
-      "kind": "declared-slot",
-      "bench": "EffectBench (instrument not built)",
+      "kind": "deterministic-facts",
+      "bench": "EffectBench v0.1 (server probe)",
       "task": "does authorization bind to the request the server executes, or only to the tool call the agent declared",
-      "n": 0,
+      "n": 261,
       "n_unit": "tool-call servers probed",
-      "n_note": "0 because nothing has been measured: no frozen bank, no probe harness, no run. A declared slot is not a measurement and is never averaged into anything.",
-      "status": "UNMEASURED",
+      "n_note": "261 third-party MCP servers received a verdict (BINDS 0 · PARTIAL 23 · DOES_NOT_BIND 238) out of 600 tried from a frozen shuffled slice (seed 20260922) of the 20,992 third-party servers with a remote URL in the public MCP registry on 2026-09-22. 230 UNCHECKABLE (141 behind an auth wall), 78 UNREACHABLE, 30 with no read-only tool and 1 with no tools are recorded and never counted. A server count, never pooled with bank-item n.",
+      "status": "MEASURED",
+      "evidence_url": "/interop/effect-binding-server-probe-2026-09-22.signed.json",
+      "run_attestation": "ED25519_SIGNED",
+      "coverage": "261 of 600 servers tried, from a population of 20,992 third-party servers",
+      "coverage_note": "The verdict population is biased toward servers that answer anonymous callers: every server that demanded credentials is UNCHECKABLE by rule, never probed and never FAIL. Our own 41 registry entries are tabled separately in the artifact and are not in n.",
       "colour": "#a1a1aa",
       "hue": 240,
-      "note": "Slot 23, ruled in 2026-09-16 (council-os/ADR-002-axis-23-effect-binding.md). Declared so the gap is public: an MCP server checks the DECLARED tool call's scope, passes it, then a caller-supplied argument interpolated into the outbound path retargets what actually EXECUTES — same credential, different operation, outside the scope the check saw. Signing the declared call attests bytes that denote a different action from the one performed. Reported on the W3C agent-conformance list 2026-09-15 in more than one independently built official MCP server; servers are in vendor triage and are not named. NOTHING HERE IS MEASURED. There is no bank, so no dataset_url is minted. When probed it will be deterministic-facts over servers, not a model fleet. Quote totals.public_count (now 23 axis · 22 measured) and never this row's n."
+      "note": "MEASURED 2026-09-22 (council-os/ADR-002-axis-23-effect-binding.md, ruling appended the same day). Deterministic: for each server one in-scope read-only call carrying an unauthorised extra argument (P2), a declared-binding-field read (P1), a replay where a nonce field exists (P3, not applicable on this slice) and a check for returned evidence (P4). Controls ran first and the grader was proven able to fail. Not a grade, not a security claim about any vendor: 'DOES_NOT_BIND' means the unauthorised argument was not refused at the boundary, not that the backend used it — the run sees the boundary, not the backend. One operating point, one day. The signed companion pins the run artifact by sha256; the artifact's own signed:false field is superseded, not edited. Quote totals.public_count and never this row's n as a bank size."
     },
     {
       "axis": "provenance-controls",
@@ -978,7 +985,7 @@
       "run_attestation": "CONTENT_ADDRESSED_UNSIGNED",
       "colour": "#fbbf24",
       "hue": 43,
-      "note": "MEASURED as two Eurostat series (13.48% / 41.17% 2024). Not an index. No formula file. C-2026-0826-05: do not restore MEASURED-INDEX-v0.1. Former slot id ai-economy-index.",
+      "note": "MEASURED as two Eurostat series from isoc_eb_ai, 2025: enterprises with 10+ employees using any AI 19.95%, large enterprises 250+ 55.03%. The size class is a dimension of the same response, so both series are read from one fetch. Not an index. No formula file. C-2026-0826-05: do not restore MEASURED-INDEX-v0.1. Former slot id ai-economy-index.",
       "facts_as_of": "2026-09-07T11:30:35Z",
       "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-ai-economy-index"
@@ -998,7 +1005,7 @@
       "run_attestation": "CONTENT_ADDRESSED_UNSIGNED",
       "colour": "#fbbf24",
       "hue": 43,
-      "note": "MEASURED as two labour series (participation 57.58%, unemployment 5.92% 2024). Not an index. C-2026-0826-05: do not restore MEASURED-INDEX-v0.1. Former slot id human-labour-index.",
+      "note": "MEASURED as two Eurostat series, 2025: activity rate age 15-64 75.6% of population (lfsi_emp_a), unemployment rate age 15-74 6.0% of the labour force (une_rt_a). Supersedes a World Bank modelled-ILO pair that this row used to quote as Eurostat. Not an index. C-2026-0826-05: do not restore MEASURED-INDEX-v0.1. Former slot id human-labour-index.",
       "facts_as_of": "2026-09-07T11:30:35Z",
       "facts_status": "MEASURED",
       "dataset_url": "https://huggingface.co/datasets/csoai/gspc-human-labour-index"
@@ -1145,8 +1152,8 @@
     }
   ],
   "limitations": [
-    "Of the 14 model-comparison axis, 2 have a published statistical-separation determination: 0 SEPARATED and 2 TIE. Methods are stated per axis; most use paired McNemar tests, while any alternative must publish its basis and supporting evidence. The remaining 12 are UNTESTED for separation. All 14 carry a measurement — separation is a further test that most have not had, and UNTESTED is not a tie. A point-estimate lead is not a measured advantage. The financial axis are not model comparisons and are not in this denominator.",
-    "23 axis are on the board and 22 carry a measurement. See totals.count_grammar. The financial-fact axis are not model comparisons — they carry no accuracy and no leader, but each is a measured deterministic-facts run.",
+    "Of the 14 model-comparison axes, 2 have a published statistical-separation determination: 0 SEPARATED and 2 TIE. Methods are stated per axis; most use paired McNemar tests, while any alternative must publish its basis and supporting evidence. The remaining 12 are UNTESTED for separation. All 14 carry a measurement — separation is a further test that most have not had, and UNTESTED is not a tie. A point-estimate lead is not a measured advantage. The financial axes are not model comparisons and are not in this denominator.",
+    "23 axes are on the board and 23 carry a measurement. See totals.count_grammar. The financial-fact axes are not model comparisons — they carry no accuracy and no leader, but each is a measured deterministic-facts run.",
     "provenance-controls plus the four 2026-09-01 issuer-disclosure mills (reserve-attestation, regulatory-framework, distribution-integrity, custody-disclosure) measure FACTS on the same six instruments. Risk verdicts stay UNMEASURED and need counsel. Not a rating, not advice, not a ranking, not an endorsement.",
     "Rail honesty on provenance-controls: the issuer facts are read from MAINNET, but the attestations are carried on DEVNET. XRPL mainnet attestation is PLANNED, not live, and nothing is attested on any Ethereum chain — the EVM-side attestation backend is NOT BUILT. Coverage is 6 of the 16 instruments the registry names; the other 10 have no locatable public issuer address and were never attested. That gap is scope, not staleness: all 6 re-verified against live mainnet with zero flag drift.",
     "C-2026-0826-05 stands: MEASURED-INDEX-v0.1 was an over-claim. Those slots are now component-fact objects (ai-adoption-components, labour-components), not indexes. Do not restore the v0.1 sticker.",
@@ -1163,7 +1170,7 @@
     "attests": "integrity of this board snapshot as published by the site (NOT a re-measurement)",
     "signer": "did:web:csoai.org#board-attestation-1",
     "alg": "Ed25519",
-    "sig": "641a6087ccf8c194b03733ef158fe07e7adb2741bec2400f4be3ffc828ea6d9291b1d0812a8dea28e14e1100b9da018de420e7bd26f754c0f0b5f6b43f01710a",
+    "sig": "dda3004a09ede138a6b1751e1a7e9e61ff5460a646ca152d0ecb5663a9569992fd27086cf08485030fff7c919bc3f935679654ad99727972398b95068b01ef05",
     "public_key_x": "k2fPWb6ctyu8l5at8FYgHsHFit_qoT-DssW3VNbCAXA",
     "sig_input": "Ed25519 over the RAW UTF-8 BYTES (not a digest) of canonical JSON of this payload with the site_attestation field removed. Canonical JSON here means: object keys sorted by code point, recursively; no whitespace (separators ',' and ':'); non-ASCII emitted LITERALLY as UTF-8, never as \\uXXXX escapes (Python ensure_ascii=FALSE — ensure_ascii=True is the wrong reading and will fail, this payload contains non-ASCII characters); numbers serialised by ECMAScript Number::toString, so an integral float renders 0, not 0.0. This is NOT the rule used by the signed measurement cards under /signed/cards/, which were minted with ensure_ascii=TRUE and whose ids are SHA-256 over those bytes — see /signed/HOW-TO-VERIFY.md. The two are deliberately different and are each signed over the bytes they were signed over.",
     "sig_input_ensure_ascii": false,
