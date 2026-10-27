@@ -1,51 +1,54 @@
 {
  "kind": "csoai.gspc-spray-snapshot/1",
- "as_of": "2026-09-22T08:54:02Z",
- "read_at": "2026-09-23T14:53:24Z",
- "lid": "23 axes measured · 14 model fleets · 0 separated leaders · 3 public leader scores · 9 fact runs · TIE is TIE · not a certificate.",
+ "as_of": "2026-10-26T19:19:22Z",
+ "read_at": "2026-10-27T04:52:37Z",
+ "lid": "23 axes measured · 14 model comparisons: 0 separated · 7 TIE · 7 UNTESTED · 9 fact runs · TIE is TIE · not a certificate.",
  "board_url": "https://councilof.ai/api/gspc",
  "root_url": "https://councilof.ai/root.json",
- "board_sha256": "be45a7ed47dc7f43a0ab83b75d3ce60909f918ecf386af7c11a78c0d5a708cca",
- "board_content_sha256": "8aac1b69d4784ff34e63a8515e1d909a86ad348a1e89bfd87cb4966fb305e583",
- "root_sha256": "ae8bbfcedf7cc30172498110e7df66a4f6c98c4aae69c9f47cdcba2abc1d334e",
- "merkle_root": "40ce3833118fab76a98c55429a5b06c7c3051915780893f3ab60a25cb31ac0a4",
- "card_count": 305,
+ "board_sha256": "67c0f69ecefb89053bfd5ef72487de07be52c0592e127334d2eb62e178194b72",
+ "board_content_sha256": "e94fd21289926a08e8f9e71320e934a3a6d629cc2fd13044439043a6ce9108ec",
+ "root_sha256": "e360e4648283e91473bdc7141aea547c1144a20860d7c0580e8373a88eeee710",
+ "merkle_root": "81c2a553038718babede20cc5ecdb819f750d03e149e7bf80d0010e7febd0f0c",
+ "card_count": 325,
  "did_intended": "did:web:csoai.org#board-attestation-1",
  "board_signer": "did:web:csoai.org#board-attestation-1",
- "fingerprint": "7219bcb45f45aecf35ac6b525d526aaa15430a74a048e159b47b0c0c230fd701",
+ "fingerprint": "600cf3983c32ff45cbdc7c4a44c9df8967b011aa92d1cd09314e041f1f251750",
  "fingerprint_rule": "sha256(board_content_sha256 | merkle_root | card_count); board_content_sha256 = sha256 of canonical JSON (sorted keys, no whitespace, UTF-8 literal) of board.json minus site_attestation",
  "counts": {
-  "slots": 23,
+  "slots": 33,
   "by_status": {
-   "MEASURED": 23
+   "MEASURED": 23,
+   "UNMEASURED": 10
   },
   "by_family": {
    "gspc": 15,
-   "financial": 8
+   "financial": 8,
+   "subject": 10
   },
   "by_kind": {
    "model-comparison": 14,
-   "deterministic-facts": 9
+   "deterministic-facts": 9,
+   "declared-slot": 10
   },
   "separation_over_model_comparison": {
-   "UNTESTED": 12,
-   "TIE": 2
+   "TIE": 7,
+   "UNTESTED": 7
   },
   "public_leader_state_over_model_comparison": {
-   "EXCLUDED_OWN_MODEL": 8,
-   "SHOWN": 3,
-   "NO_SIGNED_CARD": 3
+   "SHOWN": 9,
+   "NO_SIGNED_CARD": 3,
+   "EXCLUDED_OWN_MODEL": 2
   },
   "printed_totals": {
-   "axes": 23,
+   "axes": 33,
    "measured_axes": 23,
-   "unmeasured_axes": 0,
-   "public_count": "23 axis · 23 measured",
+   "unmeasured_axes": 10,
+   "public_count": "33 axes · 23 measured",
    "comparison_axes": 14,
    "separated_leads": 0,
-   "ties": 2,
-   "untested_separations": 12,
-   "public_leader_count": 3,
+   "ties": 7,
+   "untested_separations": 7,
+   "public_leader_count": 9,
    "items": 1230
   },
   "printed_agrees_with_array": true
@@ -280,6 +283,106 @@
    "bank_rows": null,
    "bank_canary_rows": null,
    "slug_matches_map": null
+  },
+  {
+   "axis": "lab-practice",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "company-practice",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "measurer-integrity",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "harness-fidelity",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "interop-conformance",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "humanoid-deployment",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "regulator-transparency",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "interpretability-reproducibility",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "claim-maintenance",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "serving-fidelity",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
   }
  ],
  "did_keys": [
@@ -302,6 +405,14 @@
   {
    "id": "did:web:csoai.org#gspc-board-22axis-2026",
    "x": "1XOnIZwNZFCR6fZAy1u_5xQp1DrBaFaGZaeiYNAeDSw"
+  },
+  {
+   "id": "did:web:csoai.org#card-attestation-2",
+   "x": "LPq5DNtsuwWb-THGUXrJ_0EJN9QYUoAIO6-98pthu7o"
+  },
+  {
+   "id": "did:web:csoai.org#route-attestation-1",
+   "x": "SolrH6bODivM2S5BzMqniM3IL9yopfRO8IbXdMKWJcM"
   }
  ],
  "generator": "scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)",
