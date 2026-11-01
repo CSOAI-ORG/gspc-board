@@ -60,6 +60,8 @@ jobs:
       - name: Record summary on ci-results branch
         run: |
           set -euo pipefail
+          export GIT_AUTHOR_NAME="gspc-continuous-bot" GIT_AUTHOR_EMAIL="actions@csoai.org"
+          export GIT_COMMITTER_NAME="gspc-continuous-bot" GIT_COMMITTER_EMAIL="actions@csoai.org"
           STAMP="$(python3 -I -c "import json;print(json.load(open('out/summary.json'))['run_id'])")"
           # Pure plumbing: append results/summary-<runid>.json to the
           # ci-results branch without touching this worktree (the mirror
