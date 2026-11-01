@@ -61,23 +61,24 @@ jobs:
         run: |
           set -euo pipefail
           STAMP="$(python3 -I -c "import json;print(json.load(open('out/summary.json'))['run_id'])")"
-          git config user.name "gspc-continuous-bot"
-          git config user.email "actions@csoai.org"
+          # Pure plumbing: append results/summary-<runid>.json to the
+          # ci-results branch without touching this worktree (the mirror
+          # step still needs ci/hf-mirror.py).
+          export GIT_INDEX_FILE="$RUNNER_TEMP/pulse-index"
+          rm -f "$GIT_INDEX_FILE"
           if git ls-remote --exit-code --heads origin ci-results >/dev/null 2>&1; then
             git fetch --depth 1 origin ci-results
-            git switch -B ci-results FETCH_HEAD
+            BASE="$(git rev-parse FETCH_HEAD)"
+            git read-tree "$BASE"
+            PARENT=(-p "$BASE")
           else
-            git switch --orphan ci-results
+            PARENT=()
           fi
-          mkdir -p results
-          cp out/summary.json "results/summary-${STAMP}.json"
-          git add results
-          if git diff --cached --quiet; then
-            echo "summary already recorded"
-          else
-            git commit -m "gspc-pulse: ${STAMP} (run ${GITHUB_RUN_ID})"
-          fi
-          git push origin ci-results
+          BLOB="$(git hash-object -w out/summary.json)"
+          git update-index --add --cacheinfo "100644,${BLOB},results/summary-${STAMP}.json"
+          TREE="$(git write-tree)"
+          COMMIT="$(printf 'gspc-pulse: %s (run %s)\n' "$STAMP" "$GITHUB_RUN_ID" | git commit-tree "$TREE" "${PARENT[@]}")"
+          git push origin "${COMMIT}:refs/heads/ci-results"
 
       - name: Mirror pulse to HF living dataset
         if: env.HF_TOKEN != ''
