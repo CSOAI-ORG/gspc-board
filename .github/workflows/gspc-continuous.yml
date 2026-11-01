@@ -1,0 +1,86 @@
+name: GSPC Continuous Measurement
+
+# Continuous GSPC measurement engine: scheduled frontier pulse against the
+# governance lane of csoai/gspc-master, artifacts + results branch + HF
+# living mirror. Partial results are honest results: a provider whose
+# credential is missing/invalid records BLOCKED_CREDENTIAL and the run
+# continues.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Items in the pulse panel (smoke: 5, default pulse: 30, 0 = full bank)"
+        required: false
+        default: "30"
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gspc-continuous
+  cancel-in-progress: false
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run frontier pulse
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GEMINI_TOKEN: ${{ secrets.GEMINI_TOKEN }}
+          GROK_TOKEN: ${{ secrets.GROK_TOKEN }}
+        run: |
+          LIMIT="${{ inputs.limit || '30' }}"
+          python ci/frontier-runner.py --limit "$LIMIT" --out-dir out
+
+      - name: Upload pulse artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gspc-pulse-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            out/rows.jsonl
+            out/summary.json
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Record summary on ci-results branch
+        run: |
+          set -euo pipefail
+          STAMP="$(python3 -I -c "import json;print(json.load(open('out/summary.json'))['run_id'])")"
+          git config user.name "gspc-continuous-bot"
+          git config user.email "actions@csoai.org"
+          if git ls-remote --exit-code --heads origin ci-results >/dev/null 2>&1; then
+            git fetch --depth 1 origin ci-results
+            git switch -B ci-results FETCH_HEAD
+          else
+            git switch --orphan ci-results
+          fi
+          mkdir -p results
+          cp out/summary.json "results/summary-${STAMP}.json"
+          git add results
+          if git diff --cached --quiet; then
+            echo "summary already recorded"
+          else
+            git commit -m "gspc-pulse: ${STAMP} (run ${GITHUB_RUN_ID})"
+          fi
+          git push origin ci-results
+
+      - name: Mirror pulse to HF living dataset
+        if: env.HF_TOKEN != ''
+        run: |
+          python -m pip install --quiet huggingface_hub
+          python ci/hf-mirror.py out/summary.json out/rows.jsonl
