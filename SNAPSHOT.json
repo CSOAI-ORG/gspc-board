@@ -1,34 +1,33 @@
 {
  "kind": "csoai.gspc-spray-snapshot/1",
- "as_of": "2026-10-29T11:07:30Z",
- "read_at": "2026-10-29T16:24:34Z",
- "lid": "23 axes measured · 14 model comparisons: 0 separated · 7 TIE · 7 UNTESTED · 9 fact runs · TIE is TIE · not a certificate.",
+ "as_of": "2026-11-01T15:09:42Z",
+ "read_at": "2026-11-02T19:46:58Z",
+ "lid": "34 axes measured · 14 model comparisons: 0 separated · 7 TIE · 7 UNTESTED · 9 fact runs · TIE is TIE · not a certificate.",
  "board_url": "https://councilof.ai/api/gspc",
  "root_url": "https://councilof.ai/root.json",
- "board_sha256": "67c0f69ecefb89053bfd5ef72487de07be52c0592e127334d2eb62e178194b72",
- "board_content_sha256": "e94fd21289926a08e8f9e71320e934a3a6d629cc2fd13044439043a6ce9108ec",
- "root_sha256": "8d1df2d7001d70fa020f3e05ac1c69b1567c6af9efd88329e31aab864c687039",
- "merkle_root": "0e91ad36a7674e05084f487ba387572572f8a3dbb7d553705cf8ab186d9a0561",
- "card_count": 326,
+ "board_sha256": "e19300ad4f9f635c760aa3fd29260cfc833613d5b3972811db4dcdca90731e7c",
+ "board_content_sha256": "a9d89cdd47a6987a385dbc64cdb19d842d635ac8bed86da8b28f495f9ddb72e8",
+ "root_sha256": "a1309620f50b1b45bfab60dfe84515a622678711d07d0325c36d2d7a864cb9dc",
+ "merkle_root": "4e57607854bea40122c738aa83bbcfcd0d7bd7461add1683af4ee011e1e08aa0",
+ "card_count": 428,
  "did_intended": "did:web:csoai.org#board-attestation-1",
  "board_signer": "did:web:csoai.org#board-attestation-1",
- "fingerprint": "25f015ec50d5bf9d0f0e601ea8345652a8e0a9af8c5a53bdbef7667cd867b417",
+ "fingerprint": "dd12aa8a7a40b222b0cdf6ee7ee0ff75b9faf5c6e6cbb66939e0dc49dc70ff4c",
  "fingerprint_rule": "sha256(board_content_sha256 | merkle_root | card_count); board_content_sha256 = sha256 of canonical JSON (sorted keys, no whitespace, UTF-8 literal) of board.json minus site_attestation",
  "counts": {
-  "slots": 33,
+  "slots": 34,
   "by_status": {
-   "MEASURED": 23,
-   "UNMEASURED": 10
+   "MEASURED": 34
   },
   "by_family": {
    "gspc": 15,
    "financial": 8,
-   "subject": 10
+   "subject": 11
   },
   "by_kind": {
    "model-comparison": 14,
    "deterministic-facts": 9,
-   "declared-slot": 10
+   "measured-subject": 11
   },
   "separation_over_model_comparison": {
    "TIE": 7,
@@ -40,16 +39,16 @@
    "EXCLUDED_OWN_MODEL": 2
   },
   "printed_totals": {
-   "axes": 33,
-   "measured_axes": 23,
-   "unmeasured_axes": 10,
-   "public_count": "33 axes · 23 measured",
+   "axes": 34,
+   "measured_axes": 34,
+   "unmeasured_axes": 0,
+   "public_count": "34 axes · 34 measured",
    "comparison_axes": 14,
    "separated_leads": 0,
    "ties": 7,
    "untested_separations": 7,
    "public_leader_count": 9,
-   "items": 1230
+   "items": 1844
   },
   "printed_agrees_with_array": true
  },
@@ -376,6 +375,16 @@
   },
   {
    "axis": "serving-fidelity",
+   "dataset": null,
+   "expected_short": null,
+   "items_url": null,
+   "bank_state": "NO_BANK_SLUG",
+   "bank_rows": null,
+   "bank_canary_rows": null,
+   "slug_matches_map": null
+  },
+  {
+   "axis": "watchdog-ingest",
    "dataset": null,
    "expected_short": null,
    "items_url": null,

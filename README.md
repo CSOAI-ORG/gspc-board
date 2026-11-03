@@ -1,25 +1,33 @@
-# GSPC board — snapshot as of 2026-10-29T11:07:30Z
+# GSPC board — snapshot as of 2026-11-01T15:09:42Z
 
-**23 axes measured · 14 model comparisons: 0 separated · 7 TIE · 7 UNTESTED · 9 fact runs · TIE is TIE · not a certificate.**
+**34 axes measured · 14 model comparisons: 0 separated · 7 TIE · 7 UNTESTED · 9 fact runs · TIE is TIE · not a certificate.**
 
-`GET https://councilof.ai/api/gspc` is the authority. This is a snapshot of that GET, read at `2026-10-29T16:24:34Z`, aligned to the transparency root `root.json` published at `2026-10-29T11:07:30Z`. If the live GET and these files disagree, the live GET wins. A fetch that fails is `UNCHECKABLE` — never a fabricated `0`.
+`GET https://councilof.ai/api/gspc` is the authority. This is a snapshot of that GET, read at `2026-11-02T19:46:58Z`, aligned to the transparency root `root.json` published at `2026-11-01T15:09:42Z`. If the live GET and these files disagree, the live GET wins. A fetch that fails is `UNCHECKABLE` — never a fabricated `0`.
 
 **Measurement, not certification.** A TIE is never a win. An empty slot is a finding, not a zero. No slot is for sale.
 
+## Snapshot at a glance
+
+| Scope and measurement | Evidence types | Leader separation |
+|---|---|---|
+| **34 slots · 34 measured** | **14 model-comparison axes · 9 deterministic-fact axes** | **0 separated · 7 ties · 7 untested** |
+
+Root snapshot `as_of` `2026-11-01T15:09:42Z` · source board read at `2026-11-02T19:46:58Z`. Separation counts apply only to model-comparison axes; a TIE is not a win.
+
 ## Honest counts — derived from the `axes` array in `board.json`, never typed
 
-- slots on the board: **33**
-- by status: **MEASURED** 23 · **UNMEASURED** 10
+- slots on the board: **34**
+- by status: **MEASURED** 34
 - model-comparison axes (a fleet answers a frozen bank, graded deterministically): **14** · deterministic-fact axes (public ledgers and series; no model, no leader, no accuracy): **9**
 - separation, over the model-comparison axes only: **TIE** 7 · **UNTESTED** 7 — a TIE is not a separated leader; UNTESTED is not a win either
 - public leader, over the model-comparison axes: **EXCLUDED_OWN_MODEL** 2 · **NO_SIGNED_CARD** 3 · **SHOWN** 9 (EXCLUDED_OWN_MODEL: our own council specialist led and is not ranked against the vendors we measure; NO_SIGNED_CARD: the leading external model has no signed card in the public index, so no leader is asserted)
-- the payload's own `totals` block prints `public_count` = "33 axes · 23 measured" — **agrees** with the array
-- rows behind the board (`totals.items`, the sum of each axis's n): 1230
-- transparency root: `card_count` **326** signed cards, `merkle_root` `0e91ad36a7674e05084f487ba387572572f8a3dbb7d553705cf8ab186d9a0561`, `as_of` `2026-10-29T11:07:30Z`
-- frozen banks: 13 of the 33 slots that name a dataset resolve an `items.jsonl` (818 rows in total, canary rows excluded); the others carry their bank in another file or are fact axes with pointers, not items — see the table
+- the payload's own `totals` block prints `public_count` = "34 axes · 34 measured" — **agrees** with the array
+- rows behind the board (`totals.items`, the sum of each axis's n): 1844
+- transparency root: `card_count` **428** signed cards, `merkle_root` `4e57607854bea40122c738aa83bbcfcd0d7bd7461add1683af4ee011e1e08aa0`, `as_of` `2026-11-01T15:09:42Z`
+- frozen banks: 13 of the 34 slots that name a dataset resolve an `items.jsonl` (818 rows in total, canary rows excluded); the others carry their bank in another file or are fact axes with pointers, not items — see the table
 - bank slug cross-check: all 13 mapped axes name the expected `csoai/gspc-<short>` slug
 
-## The 33 axes
+## The 34 axes
 
 | axis | family | kind | bench | n | status | separation | public leader | frozen bank | bank rows |
 |---|---|---|---|---:|---|---|---|---|---:|
@@ -46,16 +54,17 @@
 | `ai-adoption-components` | financial | deterministic-facts | Eurostat | 2 | MEASURED | — | — | [csoai/gspc-ai-economy-index](https://huggingface.co/datasets/csoai/gspc-ai-economy-index) | NO_ITEMS_JSONL |
 | `labour-components` | financial | deterministic-facts | Eurostat | 2 | MEASURED | — | — | [csoai/gspc-human-labour-index](https://huggingface.co/datasets/csoai/gspc-human-labour-index) | NO_ITEMS_JSONL |
 | `humanoid-labour-index` | financial | deterministic-facts | Disclosure | 8 | MEASURED | — | — | [csoai/gspc-humanoid-labour-index](https://huggingface.co/datasets/csoai/gspc-humanoid-labour-index) | NO_ITEMS_JSONL |
-| `lab-practice` | subject | declared-slot | pending frozen bank | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
-| `company-practice` | subject | declared-slot | pending frozen bank | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
-| `measurer-integrity` | subject | declared-slot | pending frozen bank | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
-| `harness-fidelity` | subject | declared-slot | pending frozen method | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
-| `interop-conformance` | subject | declared-slot | pending frozen bank | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
-| `humanoid-deployment` | subject | declared-slot | pending frozen registry | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
-| `regulator-transparency` | subject | declared-slot | pending frozen check bank | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
-| `interpretability-reproducibility` | subject | declared-slot | pending frozen bank | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
-| `claim-maintenance` | subject | declared-slot | pending gated re-read wave (>=30 claims) | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
-| `serving-fidelity` | subject | declared-slot | pending frozen bank | 0 | UNMEASURED | — | — | — | NO_BANK_SLUG |
+| `lab-practice` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 37 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `company-practice` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 40 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `measurer-integrity` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 40 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `harness-fidelity` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 36 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `interop-conformance` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 34 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `humanoid-deployment` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 35 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `regulator-transparency` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 41 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `interpretability-reproducibility` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 33 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `claim-maintenance` | subject | measured-subject | claim-maintenance v0.2 re-read wave | 174 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `serving-fidelity` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 38 | MEASURED | — | — | — | NO_BANK_SLUG |
+| `watchdog-ingest` | subject | measured-subject | frozen presence bank (5 classes, 3-of-5 bar) | 106 | MEASURED | — | — | — | NO_BANK_SLUG |
 
 Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `board.json`) shows the fleet, not the leader. Fact axes have no leader and no accuracy: measured is not the same as scored. `n` is the graded count the board carries; `bank rows` is what the frozen `items.jsonl` holds today, canary rows excluded — the two need not be equal, and a difference is reported, not reconciled here.
 
@@ -71,8 +80,8 @@ Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `boa
 
 | file | what |
 |---|---|
-| `board.json` | the whole live GET, byte-for-byte (sha256 `67c0f69ecefb89053bfd5ef72487de07be52c0592e127334d2eb62e178194b72`) |
-| `root.json` | the transparency root, byte-for-byte (sha256 `8d1df2d7001d70fa020f3e05ac1c69b1567c6af9efd88329e31aab864c687039`) |
+| `board.json` | the whole live GET, byte-for-byte (sha256 `e19300ad4f9f635c760aa3fd29260cfc833613d5b3972811db4dcdca90731e7c`) |
+| `root.json` | the transparency root, byte-for-byte (sha256 `a1309620f50b1b45bfab60dfe84515a622678711d07d0325c36d2d7a864cb9dc`) |
 | `SNAPSHOT.json` | as_of, read_at, digests, derived counts, bank rows, and the fingerprint every surface is keyed on |
 | `gspc-axes.csv` / `gspc-axes.jsonl` | one row per slot |
 | `check-board.sh` | re-derive the totals and the Merkle root yourself |
@@ -91,4 +100,4 @@ Per-axis numbers name the board LEADER where one is shown; `fleet_mean` (in `boa
 
 Not a certification, not a rating, not an endorsement, not legal advice. A card is evidence of what specific bytes scored on a frozen bank at a specific time. Measurement, not certification.
 
-Issuer: CSOAI Ltd (GB, Companies House 16939677). Board data licence as printed by the payload: `CC-BY-4.0`. Generated by `scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)`; fingerprint `25f015ec50d5bf9d0f0e601ea8345652a8e0a9af8c5a53bdbef7667cd867b417`.
+Issuer: CSOAI Ltd (GB, Companies House 16939677). Board data licence as printed by the payload: `CC-BY-4.0`. Generated by `scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)`; fingerprint `dd12aa8a7a40b222b0cdf6ee7ee0ff75b9faf5c6e6cbb66939e0dc49dc70ff4c`.
