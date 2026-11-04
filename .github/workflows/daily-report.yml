@@ -52,6 +52,9 @@ jobs:
       - name: Refresh the HF living mirror from the live board
         run: python ci/daily-report/refresh-mirror.py
 
+      - name: Watch the HF catalog for governance arrivals
+        run: python ci/daily-report/hf-watcher.py
+
       - name: Upload report artifacts
         uses: actions/upload-artifact@v4
         with:
