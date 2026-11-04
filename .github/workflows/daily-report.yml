@@ -1,0 +1,64 @@
+name: Daily Report
+
+# Every morning at 06:00 UTC the generator reads the live board plus the
+# published sources and publishes the day's report to HF
+# csoai/gspc-daily-reports, then refreshes the HF living mirror so the
+# byte-parity claim stays true. Fail-closed freshness is the generator's own
+# rule; UNAVAILABLE sources are reported as UNAVAILABLE, never invented.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 6 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install huggingface_hub
+        run: pip install huggingface_hub
+
+      - name: Stage sources from csoai/gspc-master
+        env:
+          GSPC_MASTER_DIR: ${{ github.workspace }}/gspc-master
+        run: python ci/daily-report/stage_sources.py
+
+      - name: Generate the day's report
+        env:
+          GSPC_MASTER_DIR: ${{ github.workspace }}/gspc-master
+        run: python ci/daily-report/generate_daily_report.py
+
+      - name: Publish the report trio to HF
+        run: python ci/daily-report/publish.py
+
+      - name: Refresh the HF living mirror from the live board
+        run: python ci/daily-report/refresh-mirror.py
+
+      - name: Upload report artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gspc-daily-report-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ci/daily-report/daily-report-*.json
+            ci/daily-report/daily-report-*.md
+            ci/daily-report/daily-report-*.sig
+          retention-days: 90
+          if-no-files-found: warn
