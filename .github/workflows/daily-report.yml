@@ -55,6 +55,9 @@ jobs:
       - name: Watch the HF catalog for governance arrivals
         run: python ci/daily-report/hf-watcher.py
 
+      - name: Build the regulation-measurement mine index
+        run: python ci/daily-report/regulation-mine.py
+
       - name: Upload report artifacts
         uses: actions/upload-artifact@v4
         with:
