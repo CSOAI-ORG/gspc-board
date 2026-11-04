@@ -41,7 +41,7 @@ ROOT = Path(__file__).resolve().parent
 ARCHIVE = ROOT / "archive"
 
 API_URL = "https://councilof.ai/api/gspc"
-GSPC_MASTER = Path(os.environ.get("GSPC_MASTER_DIR", "./gspc-master"))
+GSPC_MASTER = Path("/Users/iokfarm/workspace_for_ai/gspc-master")
 SOURCES = {
     "axis_rankings": GSPC_MASTER / "axis-rankings.json",
     "security_snapshot": GSPC_MASTER / "security-snapshot.json",
@@ -349,6 +349,11 @@ def build_fleet_section(fleets_dir, frec):
         return section
     file_hashes = {}
     for p in sorted(fleets_dir.iterdir()):
+        if not p.is_file():
+            # Nested fleet dirs (e.g. fleets/m2-smalls/) are out of scope for
+            # this top-level baseline scan; hashing them raised IsADirectoryError
+            # once the M2 fleet landed as a subdirectory (found 2026-11-04).
+            continue
         file_hashes[p.name] = sha256_file(p)
         entry = {"file": p.name, "sha256": file_hashes[p.name], "bytes": p.stat().st_size}
         if p.suffix == ".jsonl":
