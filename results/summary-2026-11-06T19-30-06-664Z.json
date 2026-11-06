@@ -1,0 +1,49 @@
+{
+  "run_id": "2026-11-06T19-30-06-664Z",
+  "engine": "gspc-continuous",
+  "lane": "governance",
+  "repo": "CSOAI-ORG/gspc-board",
+  "bank": {
+    "dataset": "csoai/gspc-master",
+    "source_dir": "fleets",
+    "unique_pairs": 237,
+    "sha256_16": "cc4cc01deab47aa9"
+  },
+  "panel": {
+    "limit": 30,
+    "offset": 0,
+    "n": 30
+  },
+  "started_at": "2026-11-06T19-30-06-664Z",
+  "finished_at": "2026-11-06T19-30-07-650Z",
+  "providers": {
+    "deepseek": {
+      "status": "BLOCKED_CREDENTIAL",
+      "reason": "DEEPSEEK_API_KEY not set",
+      "n": 0,
+      "correct": 0,
+      "unparsed": 0,
+      "accuracy": null,
+      "wilson95": null
+    },
+    "gemini": {
+      "status": "BLOCKED_CREDENTIAL",
+      "reason": "GEMINI_TOKEN not set",
+      "n": 0,
+      "correct": 0,
+      "unparsed": 0,
+      "accuracy": null,
+      "wilson95": null
+    },
+    "grok": {
+      "status": "BLOCKED_CREDENTIAL",
+      "reason": "GROK_TOKEN not set",
+      "n": 0,
+      "correct": 0,
+      "unparsed": 0,
+      "accuracy": null,
+      "wilson95": null
+    }
+  },
+  "live_providers": []
+}
