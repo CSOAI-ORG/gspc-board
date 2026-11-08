@@ -67,6 +67,15 @@ def main():
         except Exception:
             regd = None
 
+    deep = fetch("https://councilof.ai/interop/deep-index.json")
+    deepd = None
+    if deep is not None:
+        inputs["deep_index"] = {"sha256": sha256_bytes(deep), "url": "https://councilof.ai/interop/deep-index.json"}
+        try:
+            deepd = json.loads(deep)
+        except Exception:
+            deepd = None
+
     inv_ptr = fetch("https://councilof.ai/interop/regulatory-inventory-latest.json")
     if inv_ptr is not None:
         inputs["regulatory_inventory_pointer"] = {
@@ -117,6 +126,15 @@ def main():
             })
         layer_c.sort(key=lambda x: (x["days_until"] is None, x["days_until"]))
 
+    layer_e = None
+    if deepd:
+        layer_e = {
+            "schema": deepd.get("schema"),
+            "counts": deepd.get("counts"),
+            "bindings_declared": deepd.get("bindings"),
+            "note": "the deep cross-product: sectors_frameworks, industries, accounts (the spine), layer0, board_axes, deadlines - consumed from the published artifact, never re-derived here",
+        }
+
     counts = {
         "regimes": len(ewd.get("jurisdictions", [])),
         "article_rows": len(layer_a),
@@ -136,6 +154,7 @@ def main():
         "layer_a_articles": layer_a,
         "layer_b_measurements": layer_b,
         "layer_c_deadlines": layer_c,
+        "layer_e_deep_index": layer_e,
         "layer_d_declared_gap": {
             "missing_binding": "concept->axis",
             "statement": ("Article rows map to governance concepts and the board carries "
