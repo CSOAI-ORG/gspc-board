@@ -1,18 +1,18 @@
 {
  "kind": "csoai.gspc-spray-snapshot/1",
- "as_of": "2026-11-14T22:23:43Z",
- "read_at": "2026-11-15T07:03:27Z",
+ "as_of": "2026-11-15T02:40:05Z",
+ "read_at": "2026-11-18T05:13:13Z",
  "lid": "34 axes measured · 14 model comparisons: 0 separated · 7 TIE · 7 UNTESTED · 9 fact runs · TIE is TIE · not a certificate.",
  "board_url": "https://councilof.ai/api/gspc",
  "root_url": "https://councilof.ai/root.json",
  "board_sha256": "e19300ad4f9f635c760aa3fd29260cfc833613d5b3972811db4dcdca90731e7c",
  "board_content_sha256": "a9d89cdd47a6987a385dbc64cdb19d842d635ac8bed86da8b28f495f9ddb72e8",
- "root_sha256": "84de3437d5eb6ce2adbed64053efd55a4855f4bb089cff86d92d3da5719574e3",
- "merkle_root": "510cbc2fc97d6cdc3394296f1c3627e836a3acc68089dc31920abc3860d1aa49",
+ "root_sha256": "58fd66a22408f5597a159c3289ad59334099b070abda06357a8cff19e33757e1",
+ "merkle_root": "ae8c75d7ad64f87f7dccbbcc743fe8ffd7329595c6c3f38087d3057192daebb1",
  "card_count": 453,
  "did_intended": "did:web:csoai.org#board-attestation-1",
  "board_signer": "did:web:csoai.org#board-attestation-1",
- "fingerprint": "4d4a41f59b38086a6025bd3ee8d7be8d46241be94c5e42aa27efe481e7575c33",
+ "fingerprint": "cadbde4539cb21c14922aa5f97f600f3b1f98cd187039bbaf0f8edf84b814f5e",
  "fingerprint_rule": "sha256(board_content_sha256 | merkle_root | card_count); board_content_sha256 = sha256 of canonical JSON (sorted keys, no whitespace, UTF-8 literal) of board.json minus site_attestation",
  "counts": {
   "slots": 34,
@@ -422,6 +422,10 @@
   {
    "id": "did:web:csoai.org#route-attestation-1",
    "x": "SolrH6bODivM2S5BzMqniM3IL9yopfRO8IbXdMKWJcM"
+  },
+  {
+   "id": "did:web:csoai.org#layer0-attestation-1",
+   "x": "gs2psvuuhDlOSnblKiN7WbkzZFOn08odbWr2-Z9nFCI"
   }
  ],
  "generator": "scripts/spray/gspc-spray.py (CSOAI-ORG/councilof-ai)",
