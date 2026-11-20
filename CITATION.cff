@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using this metadata."
+title: "GSPC board — signed AI-governance measurement export (Council of AI)"
+authors:
+  - name: "CSOAI Ltd"
+    affiliation: "Council of AI (UK Companies House 16939677)"
+version: "1.0.0"
+date-released: "2026-11-20"
+doi: "10.57967/hf/10114"
+url: "https://huggingface.co/datasets/csoai/gspc-board"
+repository-code: "https://github.com/CSOAI-ORG/gspc-board"
+license: CC-BY-4.0
+keywords: [AI evaluation, measurement, Ed25519, governance, signed data]
+abstract: >-
+  Signed export of the GSPC board of AI behaviour measurements published by
+  Council of AI (CSOAI Ltd). Scores come from deterministic grading on frozen
+  item banks across 34 published axes, and the board is Ed25519-signed so any
+  reader can re-check it client-side. Measurement, not certification.
+  The DOI is the canonical citable identifier (DataCite, registered via
+  Hugging Face, state: findable since 2026-08-25). Live board:
+  https://councilof.ai/api/gspc — free to verify, no account.
