@@ -48,7 +48,7 @@ jobs:
           python ci/frontier-runner.py --limit "$LIMIT" --out-dir out
 
       - name: Upload pulse artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: gspc-pulse-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
